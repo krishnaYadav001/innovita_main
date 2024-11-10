@@ -1,5 +1,5 @@
 {
-  "name": "tiktok-c-nextjs13",
+  "name": "innovita",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -30,7 +30,7 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
-    "@types/debounce": "^1.2.1",
+    "@types/debounce": "^1.2.4",
     "canvas": "^2.11.2",
     "encoding": "^0.1.13",
     "raw-loader": "^4.0.2"
