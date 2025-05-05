@@ -35,7 +35,7 @@ export default function useGetAllUsers() {
           user_id: doc.user_id,
           name: doc.name,
           image: doc.image,
-          bio: doc.bio,
+          bio: doc.Bio || '', // Use uppercase B as per Appwrite collection
           createdAt: doc.$createdAt // Using Appwrite's document creation date
         }));
 

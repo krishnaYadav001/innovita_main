@@ -63,16 +63,10 @@ export default function Profile({ params }: ProfilePageTypes) {
             // Use Promise.all to load data in parallel
             Promise.all([
                 // Load profile data
-                setCurrentProfile(params.id).catch(err => {
-                    console.error('Error loading profile:', err);
-                    return null;
-                }),
+                setCurrentProfile(params.id), // Remove .catch()
 
                 // Load posts data
-                setPostsByUser(params.id).catch(err => {
-                    console.error('Error loading posts:', err);
-                    return null;
-                })
+                setPostsByUser(params.id) // Remove .catch()
             ])
             .finally(() => {
                 setIsLoadingProfile(false);
@@ -92,18 +86,9 @@ export default function Profile({ params }: ProfilePageTypes) {
 
             // Use Promise.all to load all follow data in parallel
             Promise.all([
-                setFollowers(params.id).catch(err => {
-                    console.error('Error loading followers:', err);
-                    return null; // Return null to prevent Promise.all from failing
-                }),
-                setFollowing(params.id).catch(err => {
-                    console.error('Error loading following:', err);
-                    return null;
-                }),
-                setFollowCounts(params.id).catch(err => {
-                    console.error('Error loading follow counts:', err);
-                    return null;
-                })
+                setFollowers(params.id), // Remove .catch()
+                setFollowing(params.id), // Remove .catch()
+                setFollowCounts(params.id) // Remove .catch()
             ])
             .finally(() => {
                 setIsLoadingFollows(false);

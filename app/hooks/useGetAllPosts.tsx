@@ -46,7 +46,8 @@ const useGetAllPosts = async () => {
                 }
 
                 return {
-                    id: doc.$id,
+                    $id: doc.$id, // Add Appwrite's ID field
+                    id: doc.$id,  // Keep for compatibility or specific use cases
                     user_id: doc.user_id || 'unknown',
                     video_url: doc.video_url || '',
                     text: doc.text || '',

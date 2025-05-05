@@ -13,6 +13,7 @@ const useGetPostsByUser = async (userId: string) => {
         const documents = response.documents;
         const result = documents.map(doc => {
             return {
+                $id: doc?.$id, // Add the required $id property
                 id: doc?.$id,
                 user_id: doc?.user_id,
                 video_url: doc?.video_url,

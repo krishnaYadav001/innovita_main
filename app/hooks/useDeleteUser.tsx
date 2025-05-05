@@ -165,19 +165,31 @@ const useDeleteUser = () => {
             );
             console.log(`Deleted profile ${profileId} for user ${userId}`);
 
-            // 9. Delete the user account
+            // 9. Trigger backend API to delete the user account
             try {
-                // Note: This requires admin privileges in AppWrite
-                // This may need to be handled through a server function depending on your AppWrite setup
-                await getAccount().deleteIdentity(userId);
-                console.log(`Deleted user account ${userId}`);
-            } catch (accountError) {
-                console.error(`Error deleting user account ${userId}:`, accountError);
-                console.log(`Note: User account deletion may require admin privileges in AppWrite`);
-                // Continue with success since we've deleted all the user's content
+                console.log(`Calling backend API to delete user account ${userId}`);
+                const response = await fetch('/api/admin/delete-user', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ userId }),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || `API call failed with status ${response.status}`);
+                }
+
+                console.log(`Successfully triggered backend deletion for user account ${userId}`);
+            } catch (apiError) {
+                console.error(`Error calling backend API to delete user account ${userId}:`, apiError);
+                // Log the error but continue, as content deletion was successful.
+                // The backend should handle its own errors.
+                // Optionally, you could set a specific error state here if needed.
             }
 
-            // Refresh sidebar data to remove the deleted user
+            // 10. Refresh sidebar data to remove the deleted user
             try {
                 console.log('Refreshing sidebar data after user deletion');
                 generalStore.setRandomUsers();

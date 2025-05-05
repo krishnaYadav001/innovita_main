@@ -8,14 +8,14 @@ const useGetFollowingForSidebar = async (userId: string, limit: number = 5): Pro
     // Check if the FOLLOW collection ID is defined
     if (!process.env.NEXT_PUBLIC_COLLECTION_ID_FOLLOW) {
       console.log("Follow collection ID not defined, returning random users instead");
-      return await useGetRandomUsers(limit);
+      return (await useGetRandomUsers(limit)) || [];
     }
 
     // Check if user is authenticated
     const auth = await isAuthenticated();
     if (!auth) {
       console.log("User not authenticated, returning random users instead");
-      return await useGetRandomUsers(limit);
+      return (await useGetRandomUsers(limit)) || [];
     }
 
     try {
@@ -53,7 +53,7 @@ const useGetFollowingForSidebar = async (userId: string, limit: number = 5): Pro
       // If the collection doesn't exist or there's another error, return random users instead
       if (error.message && error.message.includes("Collection with the requested ID could not be found")) {
         console.log("Follow collection not found, returning random users instead");
-        return await useGetRandomUsers(limit);
+        return (await useGetRandomUsers(limit)) || [];
       }
       throw error; // Re-throw other errors
     }

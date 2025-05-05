@@ -1,12 +1,12 @@
 import { getDatabases, Query } from "@/libs/AppWriteClient" // Use getter function
 
-const useGetRandomUsers = async () => {
+const useGetRandomUsers = async (limit: number = 5) => { // Accept limit argument
     try {
         const profileResult = await getDatabases().listDocuments( // Use getter
             String(process.env.NEXT_PUBLIC_DATABASE_ID), 
             String(process.env.NEXT_PUBLIC_COLLECTION_ID_PROFILE), 
             [ 
-                Query.limit(5) 
+                Query.limit(limit) // Use the passed limit
             ]
         );
         const documents = profileResult.documents

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import SideNavMain from "@/app/layouts/includes/SideNavMain"; // Use path alias
 import TopNav from "./includes/TopNav";
@@ -5,6 +6,28 @@ import { useGeneralStore } from "@/app/stores/general";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const { isSidebarExpanded, isMobileView, toggleSidebar } = useGeneralStore()
+const { setIsMobileView, setIsSidebarExpanded } = useGeneralStore();
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth < 768;
+            setIsMobileView(isMobile);
+            // Keep sidebar expanded by default on desktop, collapsed on mobile unless explicitly toggled
+            // We only set the initial state based on width here, toggling is handled elsewhere
+            setIsSidebarExpanded(window.innerWidth >= 768);
+        };
+
+        // Run on initial mount
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [setIsMobileView, setIsSidebarExpanded]); // Dependencies ensure the functions are stable
 
     return (
       	<>

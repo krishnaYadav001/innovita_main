@@ -32,8 +32,8 @@ export const useGeneralStore = create<GeneralStore>()(
             (set) => ({
                 isLoginOpen: false,
                 isEditProfileOpen: false,
-                isSidebarExpanded: typeof window !== 'undefined' ? window.innerWidth >= 768 : true, // Default to expanded on desktop
-                isMobileView: typeof window !== 'undefined' ? window.innerWidth < 768 : false, // Check for mobile view
+                isSidebarExpanded: true, // Default to server-rendered state (desktop)
+                isMobileView: false, // Default to server-rendered state (desktop)
                 randomUsers: [],
                 popularUsers: [],
                 allPopularUsers: [],

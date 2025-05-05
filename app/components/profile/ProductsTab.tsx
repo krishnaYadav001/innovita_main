@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ProductGridSkeleton } from '../loaders/SkeletonLoader';
 import { BsShop } from 'react-icons/bs';
+import { BiLoaderCircle } from 'react-icons/bi';
 import Link from 'next/link';
 import ProductUser from './ProductUser';
 import useGetProductsByUserId from '@/app/hooks/useGetProductsByUserId';

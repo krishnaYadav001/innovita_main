@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { account, ID } from '@/libs/AppWriteClient';
+import { getAccount, ID } from '@/libs/AppWriteClient';
 import { useUser } from '@/app/context/user';
 import useCreateProfile from '@/app/hooks/useCreateProfile';
 import MainLayout from '@/app/layouts/MainLayout';
@@ -32,7 +32,7 @@ export default function GoogleCallback() {
         // We're just verifying the session exists and getting user data
         let session;
         try {
-          session = await account.getSession('current');
+          session = await getAccount().getSession('current');
           console.log('Verified existing session:', session);
         } catch (sessionError) {
           console.error('No valid session found:', sessionError);
@@ -42,7 +42,7 @@ export default function GoogleCallback() {
         console.log('Google OAuth session created:', session);
 
         // Get the user account
-        const userData = await account.get();
+        const userData = await getAccount().get();
         console.log('User data retrieved:', userData);
 
         // Check if user profile exists, if not create one

@@ -50,7 +50,8 @@ const useGetLatestPostWithProductByUser = (userId: string | undefined) => {
             if (response.documents.length > 0) {
                 const latestPostDoc = response.documents[0];
                 const postResult: Post = {
-                    id: latestPostDoc.$id,
+                    $id: latestPostDoc.$id, // Use $id to match the Post type
+                    id: latestPostDoc.$id, // Also add the 'id' property
                     user_id: latestPostDoc.user_id,
                     video_url: latestPostDoc.video_url,
                     text: latestPostDoc.text,

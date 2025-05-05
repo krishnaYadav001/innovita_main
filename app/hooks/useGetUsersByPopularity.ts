@@ -24,7 +24,7 @@ export const getUserLikesCount = async (userId: string): Promise<number> => {
 
     // We need to query for each post ID separately since Appwrite doesn't support OR queries directly
     for (const postId of postIds) {
-      const likesResponse = await database.listDocuments(
+      const likesResponse = await getDatabases().listDocuments( // Fixed typo: use getDatabases()
         String(process.env.NEXT_PUBLIC_DATABASE_ID),
         String(process.env.NEXT_PUBLIC_COLLECTION_ID_LIKE),
         [Query.equal('post_id', postId)]

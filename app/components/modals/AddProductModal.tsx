@@ -25,7 +25,7 @@ const AddProductModal: React.FC<AddProductModalProps> = ({ postId, onClose, onPr
     // Hooks
     const { createProduct, isLoading: isCreatingProduct, error: createProductError } = useCreateProduct();
     const { updatePost, isLoading: isUpdatingPost, error: updatePostError } = useUpdatePost();
-    const { user } = useUser(); // Get current user
+    const contextUser = useUser(); // Get current user context
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const files = event.target.files;
@@ -55,7 +55,7 @@ const AddProductModal: React.FC<AddProductModalProps> = ({ postId, onClose, onPr
         }
 
         // 1. Create the product with user ID
-        const newProduct = await createProduct(name, priceNumber, url, imageFile, user?.id);
+        const newProduct = await createProduct(name, priceNumber, url, imageFile, contextUser?.user?.id);
 
         if (newProduct && newProduct.id) {
             // 2. Link product to the post

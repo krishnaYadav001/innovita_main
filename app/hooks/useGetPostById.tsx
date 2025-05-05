@@ -12,7 +12,8 @@ const useGetPostById = async (id: string) => {
         const profile = await useGetProfileByUserId(post?.user_id)
 
         return {
-            id: post?.$id, 
+            $id: post?.$id, // Add the required $id property
+            id: post?.$id,
             user_id: post?.user_id,
             video_url: post?.video_url,
             text: post?.text,

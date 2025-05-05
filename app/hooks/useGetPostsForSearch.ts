@@ -27,6 +27,7 @@ export default function useGetPostsForSearch() {
             const profile = await useGetProfileByUserId(doc?.user_id);
 
             return {
+              $id: doc?.$id, // Add the required $id property
               id: doc?.$id,
               user_id: doc?.user_id,
               video_url: doc?.video_url,
