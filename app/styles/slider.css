@@ -1,0 +1,132 @@
+/* Slider animations */
+.slider-container {
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-item {
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.5s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slider-item.active {
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.slider-item.prev {
+  transform: translateY(-100%);
+  z-index: 1;
+}
+
+.slider-item.next {
+  transform: translateY(100%);
+  z-index: 1;
+}
+
+.slider-item.sliding-up {
+  animation: slideUp 0.5s forwards;
+}
+
+.slider-item.sliding-down {
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Navigation controls */
+.slider-controls {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 20;
+}
+
+.slider-control-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-control-button:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-control-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Progress indicator */
+.slider-progress {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 20;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .slider-controls {
+    right: 8px;
+  }
+
+  .slider-control-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slider-progress {
+    right: 8px;
+    top: 8px;
+    font-size: 12px;
+  }
+}

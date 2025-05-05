@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Product Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #F02C56;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #d9254a;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        .log {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fix Product Reference</h1>
+    <p>This page will scan your browser's local storage for references to the problematic product ID <code>67ede2b1382fea7a0f35</code> and remove them.</p>
+    <p>This is a targeted fix that won't clear all your local storage data or log you out.</p>
+    
+    <button id="fixButton">Fix Product Reference</button>
+    
+    <div id="success" class="success">
+        Product reference fixed successfully! You can now close this page and return to the application.
+    </div>
+    
+    <div id="log" class="log" style="display: none;">
+        <h3>Log:</h3>
+        <div id="logContent"></div>
+    </div>
+    
+    <script>
+        function logMessage(message) {
+            const logContent = document.getElementById('logContent');
+            const logEntry = document.createElement('div');
+            logEntry.textContent = message;
+            logContent.appendChild(logEntry);
+            document.getElementById('log').style.display = 'block';
+        }
+
+        document.getElementById('fixButton').addEventListener('click', function() {
+            try {
+                // Get all keys in localStorage
+                const keys = Object.keys(localStorage);
+                logMessage(`Found ${keys.length} items in localStorage`);
+                
+                let fixedItems = 0;
+                const problematicId = '67ede2b1382fea7a0f35';
+                
+                // Check each item for the problematic ID
+                for (const key of keys) {
+                    try {
+                        const value = localStorage.getItem(key);
+                        if (value && value.includes(problematicId)) {
+                            logMessage(`Found problematic ID in item: ${key}`);
+                            
+                            // Try to parse the JSON
+                            try {
+                                const data = JSON.parse(value);
+                                
+                                // Handle different store structures
+                                if (data.state && data.state.postById && data.state.postById.primary_product_id === problematicId) {
+                                    data.state.postById.primary_product_id = null;
+                                    logMessage(`Fixed postById reference`);
+                                    fixedItems++;
+                                }
+                                
+                                if (data.state && data.state.allPosts) {
+                                    let postsFixed = 0;
+                                    data.state.allPosts.forEach(post => {
+                                        if (post.primary_product_id === problematicId) {
+                                            post.primary_product_id = null;
+                                            postsFixed++;
+                                        }
+                                    });
+                                    if (postsFixed > 0) {
+                                        logMessage(`Fixed ${postsFixed} references in allPosts`);
+                                        fixedItems += postsFixed;
+                                    }
+                                }
+                                
+                                if (data.state && data.state.postsByUser) {
+                                    let postsFixed = 0;
+                                    data.state.postsByUser.forEach(post => {
+                                        if (post.primary_product_id === problematicId) {
+                                            post.primary_product_id = null;
+                                            postsFixed++;
+                                        }
+                                    });
+                                    if (postsFixed > 0) {
+                                        logMessage(`Fixed ${postsFixed} references in postsByUser`);
+                                        fixedItems += postsFixed;
+                                    }
+                                }
+                                
+                                // Save the modified data back to localStorage
+                                localStorage.setItem(key, JSON.stringify(data));
+                            } catch (parseError) {
+                                logMessage(`Error parsing JSON for key ${key}: ${parseError.message}`);
+                            }
+                        }
+                    } catch (itemError) {
+                        logMessage(`Error processing item ${key}: ${itemError.message}`);
+                    }
+                }
+                
+                if (fixedItems > 0) {
+                    logMessage(`Successfully fixed ${fixedItems} references to the problematic product ID`);
+                    document.getElementById('success').style.display = 'block';
+                } else {
+                    logMessage(`No references to the problematic product ID found`);
+                }
+                
+                this.disabled = true;
+            } catch (error) {
+                logMessage(`Error: ${error.message}`);
+                console.error('Error fixing product reference:', error);
+            }
+        });
+    </script>
+</body>
+</html>

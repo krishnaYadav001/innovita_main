@@ -1,11 +1,11 @@
-import { database, Query } from "@/libs/AppWriteClient"
+import { getDatabases, Query } from "@/libs/AppWriteClient" // Use getter function
 
 const useSearchProfilesByName = async (name: string) => {
     try {
-        const profileResult = await database.listDocuments(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_PROFILE), 
-            [ 
+        const profileResult = await getDatabases().listDocuments(
+            String(process.env.NEXT_PUBLIC_DATABASE_ID),
+            String(process.env.NEXT_PUBLIC_COLLECTION_ID_PROFILE),
+            [
                 Query.limit(5),
                 Query.search("name", name)
             ]
@@ -13,7 +13,7 @@ const useSearchProfilesByName = async (name: string) => {
 
        const objPromises = profileResult.documents.map(profile => {
             return {
-                id: profile?.user_id,  
+                id: profile?.user_id,
                 name: profile?.name,
                 image: profile?.image,
             }

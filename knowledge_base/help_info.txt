@@ -1,0 +1,1724 @@
+﻿
+A Mini Project Report Submitted in Partial Fulfillment of The Requirements for the degree of
+Master Of Computer Applications
+
+On
+
+Innvovita
+
+of
+Mini PROJECT KCA353
+MCA-II year/ III Semester
+
+Submitted  to the department of Master of Computer Application by
+
+Krishna Yadav 2301640140108 Shagun chaturvedi 2301640140164
+Arpita Mishra 2301640140050
+
+Under the  Supervision of Sanjeev kumar shukla
+
+MCA
+
+PRANVEER SINGH INSTITUTE OF TECHNOLOGY, KANPUR
+
+
+
+
+
+
+
+To the
+
+
+
+
+
+
+
+
+
+Dr. A.P.J. Abdul Kalam Technical University, Lucknow
+
+(2024-2025)
+Certificate
+
+This is to certify that the work entitled < innovita>  being presented in this project by < Krishna Yadav 2301640140108,Shagun chaturvedi 2301640140164, Arpita Mishra 2301640140050>, for the partial fulfillment of Master Of Computer Applications, from Pranveer Singh Institute of Technology, Kanpur affiliated to Dr. A. P. J. Abdul Kalam Technical University, Lucknow,  is a bonafide record of his own work carried during the academic year -2021-22.
+
+
+
+
+
+
+Name and  Signature Guide (MCA)
+
+Name and  Signature of HOD (MCA)
+
+
+
+
+
+2
+
+DECLARATION
+
+I hereby declare that the project work entitled“<innovita>” submitted to the MCA Department ,PSIT,Kanpur .It is a record of an original work done by me under the guidance of <Mentor Name>, an d  this  project  work  is  submitted  in  the  partial fulfillment  of  the  requirements for the award of the degree of  Master of Computer Applications. The results embodied in this project  have not been submitted to any
+other University or Institute for the award of any degree or diploma.
+
+
+
+Name & Signature Date
+
+
+
+
+3
+
+ACKNOWLEDGEMENT
+
+< Acknowledge your College, HOD, Faculty Guide, and all other members like your other faculty members, parents, relatives or anyone
+who has given any kind of support during your training period >
+
+
+
+
+4
+
+ABSTRACT
+
+Innovita   is   a   hybrid   platform   merging   social   media   and   e-commerce   to   promote sustainability, creativity, and support user handmade art and craft. Users can upload reels of upcycling and recycling projects and also enables the facility of selling those items
+
+Objectives:
+•	Foster a community where users can share creative, eco-friendly ideas. • Promote sustainability by encouraging users to upcycle and recycle.
+•	Support home-based businesses by providing a marketplace for DIY and handmade items.
+Methods:
+•	Develop a user-friendly interface that includes a Reels section for video uploads, a documentation section, and a secure payment model for transactions.
+
+Expected Outcomes:
+•	Increase awareness of sustainable practices through user-generated content. • Provide a platform for artisans and creators to reach a larger audience.
+•	Generate an eco-conscious community focused on recycling and creativity.
+
+Hardware & Software Requirements:
+•	Frontend: React, Next.js, Tailwind CSS for responsive design. • Backend: Appwrite
+•	Other Tools: TypeScript for code consistency, integration of a payment gateway.
+
+Unique Selling Proposition (USP):
+
+•	If you have that feeling that you can do something important for our planet but the environmental problems seem so massive that you may feel confused about what you can actually do.
+•	Or maybe you just want to learn more about sustainability and how you can reduce the footprint of your business on the environment.
+
+•	In all of those cases, you arrived in the right place, in our website you will learn what sustainability is and especially what you can do to help the environment.
+
+•	We are going to show you how to tackle those huge problems of our planet by breaking them down into much smaller and easier-to-manage issues. They will not look so scary and hard to solve anymore!
+
+
+
+
+
+5
+
+
+CONTENTS AT A GLANCE
+
+
+CONTENTS	PAGE NO.
+
+
+
+•	Introduction ➢  Problem Definition
+➢  Hardware and software  specification ➢  Problem Statement
+➢  Proposed Solution ➢  Scope
+
+
+•	Project analysis ➢  Study of Existing system ➢  Gap in existing system ➢  Feasibility study
+➢  Tools used to gather information
+
+•	Project Design
+➢  Software requirement specification ➢  Software functional specification ➢  Data flow diagram
+➢  E-R diagram ➢  UML diagrams
+
+•	System implementation •	Testing
+•	System input and output screenshot •	Limitations and Scope of project
+•         Conclusion •         References
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+Introduction
+
+
+
+
+
+Overview of Innovita: Innovita is a groundbreaking hybrid platform that seamlessly integrates social media with e-commerce to champion sustainability and creativity. It provides an interactive space for users to share, explore, and monetize handmade art and crafts. Unlike conventional platforms that prioritize entertainment, Innovita focuses on fostering  a  community centered  on  upcycling,  recycling,  and  promoting  sustainable practices. By enabling users to upload short videos showcasing their innovative projects, Innovita not only enhances environmental awareness but also provides a marketplace for creative products.
+
+The Vision Behind Innovita: The core vision of Innovita is to reshape the role of social media by promoting purposeful engagement. It seeks to counter the global trend where social media platforms often emphasize sensational content over educational or meaningful interactions. For example, in many countries like China, social media is utilized to foster educational growth and social values. Innovita aspires to replicate and expand  on  this  model  by  creating  a  space  where  creativity  and  sustainability  are celebrated.  By  doing  so,  it  empowers  users  to  contribute  to  a  more  informed  and environmentally conscious society.
+
+Current Challenges and the Need for Innovita :Today, the majority of social media platforms prioritize viral content that may entertain but often lacks long-term value.   This   trend   diverts   attention   away   from   meaningful   initiatives   such   as environmental conservation or skill-building. Additionally, while e-commerce platforms offer  marketplaces,  they  rarely  integrate  the  educational  and  creative  aspects  of sustainability. Innovita addresses these gaps by combining:
+
+	Short-form educational videos: that encourage learning and creativity.
+	E-commerce  features:  that  enable  users  to  sell  their  handmade  or  upcycled products.
+	Documentation  tools:  that  provide  in-depth  guides  for  users  to  replicate innovative projects.
+
+Key Objectives of Innovita The platform has been developed with the following key objectives in mind:
+
+1.  Promote Creativity and Knowledge: Innovita provides a platform for users to showcase their talents and learn from others. It emphasizes sharing innovative ideas and solutions for environmental challenges.
+
+
+7
+2.  Encourage  Sustainability:  By  promoting  upcycling  and  recycling  projects, Innovita aims to reduce waste and foster a culture of environmental responsibility.
+3.  Monetization Opportunities: Innovita enables creators to monetize their skills by selling products through a built-in e-commerce feature, thereby supporting small businesses and artisans.
+4.  Positive  Engagement:  Unlike  traditional  social  media  platforms,  Innovita focuses on purposeful interactions that contribute to personal growth and societal benefits.
+
+How Innovita Stands Out: Innovita distinguishes itself as a unique hybrid platform that  prioritizes  meaningful  content  over  entertainment.  With  features  like  personal workspaces  for  creators,  real-time  documentation  for  better  understanding,  and  a seamless marketplace experience, it provides unparalleled opportunities for its users. By merging  social  media’s  reach  with  e-commerce’s  practicality,  Innovita  sets  a  new benchmark for how technology can be leveraged for good.
+
+Why Innovita Matters: In a world grappling with environmental challenges and the overwhelming dominance of superficial content on digital platforms, Innovita represents a fresh perspective. It inspires users to think creatively, act responsibly, and contribute to a sustainable future. By aligning creativity with commerce, Innovita ensures that users not only learn and engage but also benefit economically from their contributions.
+
+This introduction lays the foundation for understanding the purpose, significance, and transformative potential of Innovita as a platform for positive change.
+
+
+
+8
+
+
+Problem Definition
+
+Introduction   to   the   Problem:   The   digital   age   has   brought   remarkable advancements in connectivity, creativity, and commerce, but it has also posed unique challenges. Social media platforms have transformed the way people interact, share, and consume   content.   However,   their   algorithms   often   prioritize   entertainment   and sensationalism over educational, creative, or meaningful content. This approach has created an ecosystem where valuable ideas and initiatives, particularly those focusing on sustainability and innovation, struggle to gain visibility.
+
+Additionally,  environmental  issues,  including   excessive  waste  and  unsustainable consumption  patterns,  continue  to  escalate  globally.  Despite  growing  awareness, individuals lack accessible and engaging platforms that promote eco-friendly practices, such as upcycling and recycling. This gap hinders the adoption of sustainable behaviors and stifles creative solutions to these pressing challenges.
+
+Key Issues Identified
+
+1.  Algorithmic  Bias  Towards  Entertainment:  Most  social  media  platforms optimize for engagement metrics like likes, views, and shares, leading to a bias towards viral content. As a result, educational and environmentally conscious content often gets overshadowed, making it difficult for users with meaningful ideas to reach their target audience.
+2.  Limited Support for Creativity and Sustainability: While there are platforms dedicated to selling handmade or eco-friendly products, they rarely combine this with tools for content creation, learning, and community building. This disjointed approach limits the impact of creative and sustainable initiatives.
+3.  Barriers  to  Monetization  for  Creators:  Many  creators  face  challenges  in monetizing their skills, particularly in niche areas like upcycling or recycling. Current platforms often lack dedicated marketplaces that cater to the unique needs of such creators, leaving them without reliable avenues to generate income.
+4.  Environmental Awareness Challenges: Although awareness campaigns about sustainability exist, they often fail to engage younger audiences effectively. The lack of visually appealing and easily consumable content that aligns with modern consumption habits hampers these campaigns' success.
+
+The  Societal  Impact  of  the  Problem:  The  lack  of  a  unified  platform  addressing creativity, sustainability, and monetization results in:
+
+
+
+
+
+
+9
+	Missed	Opportunities	for	Environmental	Impact:	Individuals	and communities are less likely to adopt sustainable practices without engaging tools and resources.
+	Underutilized   Creative   Potential:   Talented   creators   are   unable   to   gain recognition or financial support, which stifles innovation.
+	Erosion of Positive Social Media Engagement: Instead of fostering meaningful interactions, current platforms often perpetuate superficial trends.
+
+Need for Innovita: To address these challenges, a new kind of platform is necessary — one that combines the reach of social media with the functionality of e-commerce while prioritizing educational and sustainable content. Innovita emerges as the solution to fill this gap by offering:
+
+	A dedicated space for creators to share eco-friendly and innovative ideas.
+	Interactive tools for users to learn, create, and monetize their contributions.
+	A marketplace that integrates seamlessly with creative content to promote sustainable commerce.
+
+By solving these problems, Innovita aims to redefine the role of digital platforms, making them more impactful, inclusive, and purpose-driven.
+
+
+
+
+
+
+
+10
+
+
+Purpose of Innovita
+
+Innovita aims to revolutionize the way individuals interact with digital platforms by bridging   the   gap   between   social   media   and   e-commerce   while   promoting sustainability. The platform is designed not just as a space for content creation and social interactions, but as a dynamic ecosystem where creators, businesses, and users can seamlessly engage in education, creativity, and commerce.
+
+The core purpose of Innovita is to create a space where users can engage with content that’s not only educational and creative but also geared toward positive social impact. By integrating  e-commerce  features  directly within  the  platform,  Innovita provides users the tools to monetize their talents and ideas, offering creators opportunities for financial  independence  and  businesses  the  ability  to  interact  directly  with  potential customers in a highly engaged, content-driven environment.
+
+Primary Goals of Innovita
+
+1. Bridge the Gap Between Social Media and E-commerce for Sustainability:
+
+In  today's  digital  landscape,  users  are  accustomed  to  interacting  with  social  media platforms	that   focus   on	entertainment,   engagement,	and   social   connection. Simultaneously, e-commerce platforms cater to users looking to purchase products and services. However, these two worlds are often  isolated, with little cross-pollination. Innovita seeks to create a hybrid space that integrates the social media experience with e-commerce  functionality.  This  integration  allows  users  to  share,  discover,  and purchase products or services seamlessly within a dynamic, social environment.
+
+By emphasizing sustainability, Innovita encourages creators and businesses to promote ethical products, services, and practices. The platform supports initiatives that prioritize environmentally  friendly  production,  sustainable  sourcing,  and  fair  trade  practices, aligning  business  objectives  with  a  growing  consumer  demand  for  responsible consumption. This not only helps users make informed, impactful purchasing decisions but also creates an ecosystem where businesses committed to sustainability can flourish.
+
+Innovita envisions a world where content creators and businesses don’t merely coexist but  thrive  together,  empowering  users  to  contribute  to  and  benefit  from  a  more sustainable future.
+
+
+
+
+
+
+
+11
+2. Provide a Platform for Creators to Showcase and Monetize Talents:
+
+At the heart of Innovita’s purpose is its focus on creators — individuals who produce educational,   artistic,   or   entrepreneurial   content.   Innovita   provides   creators   a comprehensive platform to showcase their talents, whether it’s through videos, blog posts,  podcasts,  tutorials,  or  live  streams.  Creators  can  share  their  expertise  and creativity with a wide audience, building a following and establishing their personal brand.
+
+Innovita  also  aims  to  empower  creators  by  offering  monetization  options  through various integrated features. For example, creators can sell their content, merchandise, or services directly on the platform. Through partnerships with e-commerce tools, creators can promote and sell their products, whether it’s art, courses, merchandise, or any other creative output. Subscription models, paid content, and affiliate marketing programs further enable creators to generate income from their online presence.
+
+Moreover, Innovita supports crowdfunding and donation-based monetization, where followers and fans can directly contribute to their favorite creators, helping them grow and sustain their creative endeavors. By providing these monetization opportunities, Innovita removes traditional barriers to success for creators, enabling them to thrive in a platform designed for both engagement and economic opportunity.
+
+3. Promote Educational and Creative Content:
+
+Innovita’s content strategy is focused on education and creativity. The platform fosters a community where users can not only showcase their talents but also learn from each other. Educational content is a critical element of Innovita’s ecosystem, ensuring that users  have  access  to  resources,  tutorials,  and  expert  advice  in  a  variety  of  fields, including sustainable practices, entrepreneurship, digital skills, and creative disciplines.
+
+By combining learning with creativity, Innovita offers a dynamic space where users can continuously expand their knowledge while being inspired to develop their own creative talents. The platform’s educational content isn’t limited to traditional academic subjects but extends to practical, hands-on learning — from sustainable living tips to digital marketing strategies and beyond.
+
+Innovita’s commitment to educational content also includes partnerships with experts and thought leaders, who can contribute to the platform’s growth and ensure the content offered is both relevant and cutting-edge. Creators who share their knowledge through the platform are rewarded not only by engaging with an eager audience but also through avenues that allow them to monetize their expertise.
+
+
+
+
+
+12
+Innovita's Unique Proposition
+
+Innovita stands out in the competitive landscape by offering a unique proposition that integrates education, creativity, and commerce in one platform. Unlike traditional social media or e-commerce platforms, Innovita offers a seamless user experience where individuals can engage in multiple activities in a single environment.
+
+1. Educational and Creative Content:
+
+The platform doesn’t just focus on entertainment or passive consumption; it encourages active learning and creation. Innovita provides users with a wide range of content that nurtures personal growth, creativity, and innovation. The platform supports diverse content types, including how-to tutorials, inspirational videos, podcasts, online courses, and articles that inspire users to expand their skills and knowledge.
+
+Creators and businesses have the freedom to produce and share content that’s both creative and educational, allowing for a synergistic experience where users engage in a continuous cycle of learning, consuming, and creating.
+
+2. Seamless User Experience for Sharing, Learning, and Commerce:
+
+Innovita is designed to ensure that users can move effortlessly between different activities — from social sharing to learning and purchasing. The integration of social media features with e-commerce capabilities means users can watch videos, engage in discussions, and discover products or services all within a single, cohesive platform. Whether a user is looking for educational material, seeking inspiration for a new project, or purchasing a sustainable product from a creator, Innovita enables them to do all of this without leaving the platform.
+
+This seamless experience not only keeps users engaged but also makes transactions, learning, and sharing as intuitive and integrated as possible. The platform’s design and features encourage both organic engagement and transactional actions, enabling users to explore, create, learn, and shop in one place, with minimal friction.
+
+Innovita’s unique blend of educational content, creative freedom, and e-commerce capabilities ensures that users have the tools and opportunities they need to thrive in a dynamic, digital world.
+
+
+
+
+
+
+
+
+
+
+13
+Hardware and Software Specifications for Innovita
+
+Hardware Requirements
+
+Server Specifications: To ensure optimal performance and reliability, the server infrastructure of Innovita must be robust and scalable. The following are the core hardware requirements for the server:
+
+1.  Processor (CPU):
+o  A multi-core processor (e.g., Intel Xeon or AMD EPYC) is recommended to handle multiple concurrent requests and background processes efficiently.
+o  A minimum of 4-8 cores will ensure smooth handling of server-side tasks such as database queries, authentication, and running background jobs for notifications or user data processing.
+2.  RAM:
+o  A minimum of 16-32 GB of RAM is essential for handling large amounts of data in real-time, particularly for analytics, transactions, and user interactions.
+o  As Innovita grows, more RAM may be required to handle increasing traffic, data storage needs, and memory-intensive operations like analytics and AI processing.
+3.  Storage:
+o  SSD Storage: Fast, solid-state drives (SSD) are necessary to ensure quick read and write operations, which is crucial for database operations and ensuring high availability.
+o  Capacity: Starting with at least 500GB-1TB of storage ensures ample space for user data, media uploads, logs, and backups.
+o  Cloud solutions like Amazon S3 or Google Cloud Storage may also be used to handle larger, scalable storage needs for user-generated content.
+
+Client-Side Requirements:
+
+Innovita aims to reach a wide range of users, so ensuring accessibility across various devices and browsers is essential.
+
+1.  Browsers:
+o  The platform should be compatible with all modern web browsers, including:
+ Google Chrome (latest version)  Mozilla Firefox (latest version)  Microsoft Edge (latest version)
+
+
+14
+ Safari (latest version for Apple devices)  Opera
+o  Support for older browser versions should be minimized, but basic compatibility should be ensured for at least the last two versions of major browsers.
+2.  Devices for End-Users:
+o  Desktops and Laptops: Windows, macOS, and Linux operating systems. o  Mobile Devices: iOS (iPhone and iPad), Android devices (smartphones
+and tablets). Innovita should be responsive, meaning it adjusts smoothly to different screen sizes and devices for an optimal user experience.
+o  Performance Requirements: Devices with at least 2GB RAM and a modern processor to ensure a smooth experience when interacting with dynamic content and real-time features of the platform.
+
+
+
+
+Software Stack
+
+Frontend:
+
+Innovita's frontend leverages React.js and Next.js, two powerful JavaScript frameworks, to provide a dynamic and SEO-optimized user interface.
+
+1.  React.js:
+o  React.js is a JavaScript library for building fast and interactive user interfaces. It uses a component-based architecture, making the frontend development highly modular and maintainable.
+o  React's virtual DOM ensures minimal re-renders, improving performance by updating only the parts of the page that need to change.
+o  React provides seamless integration with various third-party libraries for features such as routing, state management, and form handling.
+2.  Next.js:
+o  Next.js is a React framework that enables server-side rendering (SSR) and static site generation (SSG). It is optimized for SEO, which is crucial for the discoverability of Innovita's pages on search engines.
+o  Features like automatic code splitting, optimized routing, and built-in image optimization help improve performance, user experience, and SEO rankings.
+o  Next.js ensures that Innovita pages load quickly, even on slow connections, while delivering highly dynamic and personalized content to the user.
+
+
+
+
+
+
+15
+Backend:
+
+Innovita uses Appwrite as its backend solution. Appwrite is an open-source backend-as-a-service (BaaS) platform designed to handle critical operations like user authentication, database management, file storage, and serverless functions.
+
+1.  Authentication and User Management:
+o  Appwrite provides a secure and flexible authentication system, supporting email/password logins, OAuth providers (Google, Facebook, etc.), and other common authentication methods.
+o  It ensures user privacy and security through hashed passwords and tokens for session management.
+2.  Database Management:
+o  Appwrite supports a NoSQL database, which allows easy storage and retrieval of unstructured or semi-structured data. This is essential for Innovita, as it can scale easily to handle various user-generated content types, including profiles, transactions, and activity logs.
+o  Appwrite also offers real-time database features, enabling real-time collaboration or activity tracking.
+3.  Serverless Functions:
+o  Appwrite supports serverless functions, allowing Innovita to run background tasks, such as sending notifications, processing transactions, or handling analytics, without managing a traditional backend server.
+
+
+
+
+
+
+16
+
+
+Problem Statement
+
+The Innovita platform aims to address several critical challenges that are central to delivering a seamless experience for both content creators and users. These challenges span content management, user interaction, and technical scalability. Below, we break down these challenges into key categories:
+
+
+
+
+1. Content Management
+
+Challenge: Efficiently Store and Retrieve User-Generated Content
+
+	Problem: As the volume of content increases, managing and retrieving large amounts of video and media files can become cumbersome. Efficient storage solutions are necessary to ensure quick access and smooth user experience.
+	Solution: Innovita will adopt a cloud-based infrastructure for storage, ensuring scalability. The system will leverage content delivery networks (CDNs) for faster retrieval and seamless viewing of videos across different regions.
+
+Challenge: Methods for Processing and Optimizing Media Files
+
+	Problem: User-generated content may vary in quality and size, requiring real-time processing (e.g., transcoding, compression, resolution adjustments) to ensure it is optimized for various devices.
+	Solution: Innovita will incorporate media optimization tools within the platform. Automatic media processing will enhance videos' compatibility across different screen sizes and bandwidth conditions. Additionally, users can manually adjust these settings through the editing suite.
+
+Challenge: Strategies for Content Distribution
+
+	Problem: Ensuring that content reaches the right audience efficiently and effectively, especially with the increasing volume of videos uploaded daily.
+	Solution: Innovita will utilize AI algorithms for content curation and distribution, recommending videos based on user behavior and preferences. This personalized approach will enhance content visibility and engagement.
+
+
+
+
+
+
+
+
+17
+2. User Interaction
+
+Challenge: Implementation of Real-Time Social Features
+
+	Problem: Real-time interaction features, such as comments, likes, shares, and live streaming, require constant synchronization to ensure immediate updates across devices and users.
+	Solution: Innovita will implement WebSocket or server-sent events (SSE) technology to ensure real-time updates and interactions across the platform. This will create a dynamic environment where users can engage instantly with content.
+
+Challenge: Development of Intuitive User Interfaces
+
+	Problem: Users of varying technical abilities need an easy-to-use interface to navigate the platform, create content, and engage with other users.
+	Solution: The platform will be built using React.js and Next.js to ensure a responsive and accessible user experience. User interfaces will be designed with a focus on simplicity, offering tools that are intuitive for both novice and advanced users.
+
+Challenge: Integration of Social Networking Capabilities
+
+	Problem: Users expect a social experience similar to other major platforms, where they can connect, follow, and engage with other users.
+	Solution: Innovita will incorporate a social network-like experience with features such as following other creators, commenting, liking, and sharing videos, as well as notifications for new content. It will also allow cross-platform integration, making it easy for users to share content on other social media networks.
+
+
+
+
+3. Technical Challenges
+
+Challenge: Ensuring System Scalability
+
+	Problem: As the number of users and content grows, the platform needs to scale efficiently without degrading performance. Scalability challenges include handling large media files, simultaneous interactions, and growing user databases.
+	Solution: Innovita will employ a microservices architecture, enabling the platform to scale horizontally by adding more servers as needed. Auto-scaling solutions in cloud environments (e.g., AWS, Google Cloud) will ensure the platform can handle spikes in traffic without performance degradation.
+
+
+
+
+18
+Challenge: Maintaining Performance Under Load
+
+	Problem: During high traffic times, such as viral content releases or new feature rollouts, maintaining smooth platform performance is critical to user retention and satisfaction.
+	Solution: To maintain performance, Innovita will use load balancing, database optimization, and content caching to distribute traffic and reduce strain on the backend. Real-time performance monitoring tools will help identify and mitigate potential bottlenecks.
+
+Challenge: Implementing Secure User Authentication
+
+	Problem: With increasing concerns around data privacy and security, implementing a secure authentication system is essential to protect user information and prevent unauthorized access.
+	Solution: Innovita will adopt OAuth 2.0 or OpenID Connect protocols for secure authentication. Two-factor authentication (2FA) will be integrated to add an extra layer of security. The platform will also comply with GDPR and other relevant privacy regulations to ensure user data is handled securely.
+
+
+
+
+
+19
+
+
+
+
+Proposed Solution (Scope)
+
+1. Introduction
+
+Innovita aims to revolutionize the digital content and upcycling art space by providing a platform that blends creativity with technology. This platform will allow users to create, engage, and monetize short-form videos, specifically focused on art and innovation. Through a combination of intuitive tools, a dynamic user interface, and robust backend infrastructure, Innovita seeks to become the go-to platform for artists, creators, and art enthusiasts.
+
+
+
+
+2. Features of Innovita :
+
+Short Videos:
+
+1.  Creation Tools:
+o  Trimming: A simple tool to cut videos, allowing creators to adjust the length of their content to fit the desired format for sharing or monetization.
+o  Audio Integration: Users can overlay or sync audio tracks to their videos, enhancing the narrative or artistic expression. Options will include royalty-free music and a library of sound effects.
+o  Editing Suite: A built-in editor offering a wide array of features such as transitions, color correction, text overlay, and visual effects to help users refine their videos and make them more engaging.
+2.  Interaction:
+o  Likes, Comments, and Shares: Similar to existing social platforms, users can interact with videos by liking, commenting, and sharing them. These features foster community engagement and allow content to be viral, spreading organically.
+o  Monetization via Sales: Innovita provides creators with the ability to sell their art or products directly through the platform, facilitating a direct-to-consumer sales model. Creators can also benefit from ad revenue or sponsored content.
+3.  Documentation:
+
+
+
+
+
+
+20
+o  Step-by-step Guides: Easy-to-follow guides will be available to help users understand how to use the platform’s features. These guides will be comprehensive, ranging from beginner to advanced techniques.
+o  Summaries and FAQs: An FAQ section will address common concerns and provide quick answers to help users troubleshoot. Additionally, summaries of guides will provide quick overviews for efficient learning.
+o  Timestamped Indexes: For lengthy guides or tutorials, timestamped indexes will allow users to jump to specific sections without having to sift through long documents.
+4.  Rich Resource Links: Curated links to external resources, articles, and videos that enhance user learning and knowledge about content creation, video editing, and digital art techniques.
+
+
+
+
+3. Technology Stack :
+
+Innovita’s platform will be built on a modern and scalable technology stack, combining the best of front-end development, back-end solutions, and cloud infrastructure.
+
+1.  React.js & Next.js:
+o  React.js: Used for building a dynamic and responsive user interface. React's component-based structure enables reusability, ensuring a consistent user experience across different sections of the platform.
+o  Next.js: As a framework for server-side rendering, Next.js ensures fast page loads and SEO optimization, which are critical for content discovery and user engagement.
+2.  Appwrite:
+o  Backend Operations: Appwrite is chosen as the backend solution for Innovita, providing an easy-to-use, open-source platform for managing user authentication, databases, and file storage. Its scalable nature supports large amounts of content creation and storage without compromising on performance.
+3.  Cloud Infrastructure:
+o  Innovita will leverage cloud hosting to ensure that the platform can scale with increasing user numbers and content uploads. This infrastructure will support video storage, high-performance rendering, and data security.
+4.  AI Integration:
+o  To enhance user experience, artificial intelligence will be employed to provide personalized recommendations and smart editing features, making the platform more intuitive and engaging.
+
+
+
+
+21
+
+
+
+
+4. Workflow Explanation :
+
+Innovita’s workflow will consist of the following stages:
+
+1.  Content  Creation:  Users  will  start  by uploading  their  raw video  footage  or recording directly through the platform. They will then proceed to the editing suite where they can trim, add audio, and apply visual effects.
+2.  Engagement: Once content is published, users can interact with it by liking, commenting, and sharing it across social media or within the platform itself. Users  can  also  follow  their  favorite  creators,  which  adds  to  community interaction.
+3.  Monetization & Transactions: Innovita allows creators to monetize their videos by selling digital art or products through integrated e-commerce features. Creators can  track  sales,  manage  inventory,  and  receive  payments  directly  from  the platform.
+4.  Feedback Loop:  After  a video is  live, Innovita’s  AI-driven recommendation system will provide insights to help creators improve their content and reach a larger audience.
+
+
+
+
+5. Innovita's Unique Edge:
+
+1.  Comparison with Existing Platforms:
+o  Unlike  platforms  such  as  YouTube  or  Instagram,  which  are  designed primarily   for   broad,   non-specialized   content,   Innovita   is   focused specifically  on  the  niche  of  short-form  video  content  centered  around creativity and innovation.
+o  While Instagram and TikTok allow user engagement, Innovita offers more advanced tools specifically aimed at artists and creators, such as detailed video editing and sales features for digital art.
+2.  How Innovita Fills the Gap in the Market:
+o  Innovita bridges the gap by providing a platform that supports both artistic creation  and  commerce.  Unlike  other  platforms,  creators  can  directly monetize their content without relying on external services like Patreon or third-party marketplaces.
+o  The combination of a creative suite with an e-commerce backend offers a comprehensive environment for content creators, enabling them to create, engage, and profit all in one place.
+
+
+22
+
+
+
+6. Future Scope :
+
+1.  AI Integration for Personalized Recommendations:
+o  As  Innovita  grows,  AI  will  play  a  significant  role  in  analyzing  user behavior  and  providing  personalized  content  recommendations.  These intelligent algorithms will help users discover new content that aligns with their  interests  while  assisting  creators  by  suggesting  improvements  or optimizations for their videos.
+2.  VR Exhibitions for Showcasing Upcycled Art:
+o  Innovita plans to introduce Virtual Reality (VR) exhibitions, where creators can  showcase  their  upcycled  or  digital  art  in  virtual  spaces.  These exhibitions  will  provide  a  new  level  of  immersion,  allowing  users  to interact with the art in an engaging and innovative manner.
+
+
+
+
+This proposed solution sets a clear vision for Innovita, emphasizing its unique features, technology, and long-term goals to stand out as a creative and commercially viable platform.
+
+
+23
+Projectanalysis
+
+
+
+
+
+Study of Existing Systems:
+
+Analysis of Current Social Media Platforms-
+
+Traditional Social Networks:
+
+	CentralizeArchitectures:
+Centralized architectures rely on a single point of control and storage, where all user interactions and data are managed by a central server. This setup simplifies data synchronization and control but introduces vulnerabilities:
+o  Single Point of Failure: If the central server crashes or is compromised, the  entire  network  becomes  inaccessible.  For  example,  downtime  on platforms like early Facebook could render the service unusable for all users.
+o  Data Privacy Risks: Centralization makes platforms attractive targets for hackers, as breaching a single point grants access to extensive user data.
+	MonolithicCodebases:
+Monolithic systems combine all functionalities into one application, making the codebase large and complex. Key drawbacks include:
+o  Deployment Challenges: Releasing updates requires redeploying the entire application, increasing the risk of bugs or downtime.
+o  Inflexibility:  Modifying  or  adding  features  can  be  cumbersome  since changes in one module often affect others.
+	LimitedScalability:
+Traditional networks often depend on vertical scaling (adding more  powerful hardware) rather than horizontal scaling (adding more servers). As user numbers grow,  this  approach  becomes  prohibitively  expensive  and  less  effective.  For example, early social media platforms struggled to support global, simultaneous user interactions.
+
+Modern Platforms:
+
+	Microservices-Based:
+Microservices break down functionalities into independent services (e.g., login, posts,  messaging).  Each  service  can  be  developed,  deployed,  and  scaled independently. Benefits include:
+	Resilience: If one microservice fails, others continue to function.
+
+
+
+24
+	Flexibility: Different services can use different programming languages, tools, or databases optimized for their specific tasks.
+	Scalability: Specific components (e.g., real-time notifications) can be scaled up or down based on demand without affecting the rest of the system.
+	Cloud-Native	Solutions: Cloud-native platforms leverage distributed cloud infrastructure, such as AWS or Azure. Key advantages include:
+o  Elasticity:   Automatically   adjust   resources   to   meet   fluctuating   user demands, ensuring consistent performance during peak loads.
+o  Global Reach: Cloud providers offer data centers worldwide, enabling faster access for users across different regions.
+o  Cost Efficiency: Pay-as-you-go models ensure platforms only pay for the resources they consume.
+	Real-Time	Capabilities: Modern   platforms   use   technologies   like   WebSockets   and   event-driven architectures for instant updates. Examples include:
+o  Live Video Streaming: Interactive features such as real-time comments and reactions during live broadcasts.
+o  Instant  Messaging:  Delivering  messages  without  delays,  creating  a seamless user experience.
+o  Push Notifications: Instant alerts for user actions like likes, shares, or messages.
+
+
+
+25
+Gap Analysis
+
+Identified Gaps in Existing Systems
+
+Technical Gaps-
+
+	Performance Limitations:
+Social media platforms often experience performance issues such as slow load times or delays in real-time updates. These issues arise from:
+o  Heavy Data Loads: The massive amounts of multimedia content (e.g., videos, images) can overwhelm servers.
+o  Inefficient  Queries:  Poorly  optimized  database  queries  can  bottleneck performance, especially during peak usage.
+o  Latency Issues: Inadequate server distribution leads to higher latency for users in distant regions.
+	Scalability Constraints:
+Despite advancements, platforms may struggle to handle unexpected traffic spikes. For instance, viral posts can lead to millions of simultaneous interactions, stressing the system. Scalability issues are often due to:
+o  Bottlenecks in Legacy Systems: Older systems may lack the modularity needed for effective scaling.
+o  Resource  Limitations:  Even  cloud-native  solutions  face  constraints  if resource allocation isn't optimized.
+	Integration Challenges:
+Platforms increasingly need to interact with third-party applications (e.g., payment gateways, analytics tools). Challenges include:
+o  API	Incompatibilities:	Legacy	APIs	may	not	support	modern functionalities, creating integration hurdles.
+o  Security  Risks:  Poorly  integrated  systems  are  prone  to  vulnerabilities, risking data breaches.
+
+
+
+User Experience Gaps-
+
+	Complex Interfaces:
+Overloading interfaces with features can confuse users and reduce engagement. Examples include:
+o  Cluttered  Dashboards:  Presenting  too  much  information  at  once  can overwhelm users, making it difficult to locate key features.
+o  Unintuitive  Navigation:  Poorly  organized  menus  or  workflows  hinder usability, particularly for new users.
+
+
+
+
+26
+	Limited Accessibility:
+Many platforms fail to cater to users with disabilities, such as those needing screen readers or voice commands. Common issues include:
+o  Non-Compliant Designs: Lack of adherence to accessibility standards like WCAG results in poor usability.
+o  Missing Features: Absence of captions for videos or keyboard navigation limits inclusivity.
+	Poor Mobile Responsiveness:
+With a significant portion of users accessing social media via mobile devices, poorly optimized platforms lead to:
+o  Inconsistent Layouts: Elements like buttons or menus may not render correctly on smaller screens.
+o  Slow   Load   Times:   High   data   consumption   or   inefficient   loading mechanisms frustrate mobile users.
+o  Feature  Disparity:  Mobile  versions  often  lack  features  available  on desktop, reducing functionality.
+
+
+
+
+
+
+27
+Feasibility Study
+
+
+
+
+Technical Feasibility
+
+Technology Stack Assessment:
+
+1.  Modern Web Technologies Availability:
+o  Frontend  Development:  Frameworks  like  React,  Angular,  and  Vue.js offer  robust  tools  for  building  interactive  user interfaces.  They support dynamic rendering, real-time updates, and enhanced performance for web applications.
+o  Backend  Development:  Tools  like  Node.js,  Django,  and  Spring  Boot enable the creation of scalable, high-performance server-side architectures. These  technologies  are  well-suited  for  handling  heavy  user  traffic  and complex business logic.
+o  Database  Solutions:  Modern  databases  like  MongoDB  (NoSQL)  and PostgreSQL (SQL) provide flexibility and efficiency for handling diverse data  types,  making  them  ideal  for  the  varied  needs  of  a  social  media platform.
+2.  Development Tools Maturity:
+o  Integrated Development Environments (IDEs): Tools like Visual Studio Code and IntelliJ IDEA enhance productivity with debugging, testing, and code management features.
+o  Version Control Systems: Git-based platforms like GitHub and GitLab streamline collaboration and maintain robust version histories.
+o  Testing Frameworks: Tools such as Selenium, Cypress, and Jest ensure that  both  frontend  and  backend  functionalities  are  rigorously  tested, reducing bugs and enhancing reliability.
+3.  Community Support:
+o  Modern technologies are backed by vast, active communities. For example, React has an extensive ecosystem of third-party libraries, while platforms like Stack Overflow provide quick resolutions to development challenges.
+o  Open-source contributions and forums ensure continued updates, security patches, and best practices.
+
+Infrastructure Requirements:
+
+1.  Cloud Service Availability:
+
+
+
+
+
+28
+o  Options: Leading providers like AWS, Google Cloud, and Microsoft Azure offer scalable and cost-efficient solutions for hosting applications and storing data.
+o  Benefits: These platforms ensure global reach, high availability, and support for modern deployment strategies such as containerization.
+2.  Hosting Options:
+o  On-Premises Hosting: While offering complete control, this option is resource-intensive and may not scale effectively.
+o  Cloud Hosting: A more flexible and scalable choice, allowing dynamic resource allocation based on user demands.
+3.  Deployment Strategies:
+o  Continuous Integration/Continuous Deployment (CI/CD): Tools like Jenkins, GitHub Actions, and CircleCI enable seamless code deployment with automated testing and integration pipelines.
+o  Containerization: Technologies like Docker and Kubernetes simplify application deployment, ensuring consistency across development and production environments.
+
+
+
+
+Economic Feasibility
+
+Development Costs
+
+1.  Infrastructure Expenses:
+o  Initial costs for setting up cloud services or servers.
+o  Expenses for load balancers, storage, and virtual machines. o  Licensing fees for any proprietary software or tools.
+2.  Development Tools:
+o Many modern tools are open-source or come with affordable licensing. o  Premium tools (e.g., project management software like Jira) may incur
+additional costs. 3.  Human Resources:
+o  Salaries for developers, UI/UX designers, QA engineers, and project managers.
+o  Specialized roles like data engineers or cloud architects may command higher compensation.
+o  Training costs for team members unfamiliar with selected technologies.
+
+Operational Costs
+
+1.  Hosting and Maintenance:
+
+
+
+29
+o  Monthly or annual expenses for hosting services (e.g., AWS EC2 instances, S3 storage).
+o  Cost of monitoring tools like Datadog or New Relic to ensure system reliability.
+2.  Updates and Upgrades:
+o  Regular updates to address bugs, introduce new features, or comply with evolving regulations.
+o  Upgrading software stacks, frameworks, or infrastructure components to leverage newer technologies.
+3.  Support Services:
+o  Dedicated support teams to address user issues, ensure system uptime, and manage Expenses for ticketing systems and knowledge bases to streamline support operations outages.
+
+
+
+
+30
+Tools and Technology Used
+
+
+The Innovita platform utilizes the following tools and technologies: 1. React.js:
+	Purpose: Frontend development for building user interfaces (UIs).
+
+	Key Features:
+
+ Declarative approach for dynamic UIs.
+
+ Component-based architecture for reusable and modular code.  Virtual DOM for improved performance.
+2. Next.js (built on React):
+	Purpose: Full-stack web application framework.
+
+	Key Features:
+
+ Server-Side Rendering (SSR) for improved SEO and faster initial load.  File-based routing for simplified page creation.
+ Automatic code splitting for optimized performance.  API routes for handling server-side logic.
+ Static Site Generation (SSG) for content-heavy websites.
+
+3. Appwrite:
+	Purpose: Backend server to simplify app development.
+
+	Key Features:
+
+ User authentication and database management.
+
+ File storage and other essential backend services.  Supports web and mobile applications.
+4. Video Creation Tools (for Shorts):
+	Tools: for trimming, editing, adding music, and applying filters to short videos.
+
+	Features: like speed control, text overlays, and audio syncing for enhanced video content.
+
+5. Payment Gateway:
+	Purpose: Secure payment processing for the buy-and-sell feature.
+
+	Key Features:
+
+ Supports various payment methods (credit/debit cards, digital wallets).
+
+
+31
+	Secure checkout process with encryption and two-factor authentication.
+	These tools and technologies enable the platform to offer a smooth, creative, and secure user experience for content creation, e-commerce, and backend management.
+32
+Project Design
+
+
+
+
+
+Software Requirement Specification
+
+Non-Functional Requirements-
+
+Non-functional requirements ensure that Innovita operates efficiently, securely, and can scale to meet future demands. Here's a detailed breakdown of the key non-functional requirements:
+
+
+
+
+1. Performance-
+
+Objective: Ensure fast response times, minimal latency, and high throughput.
+
+	Response Time:
+o  Target response time for most user actions (e.g., loading feeds, posting content) is under 200ms.
+o  Real-time features like messaging and notifications should have sub-100ms latency to provide a seamless experience.
+	Concurrent Users:
+o  Innovita should support thousands of concurrent users during peak hours without degradation in performance.
+o  Load testing tools like Apache JMeter or Gatling can simulate user traffic and identify bottlenecks.
+	Database Performance:
+o  Use indexing, caching (e.g., Redis or Memcached), and optimized queries to improve database access times.
+o  Implement   read   replicas   to   handle   heavy   read   operations   without overloading the primary database.
+	Content Delivery Optimization:
+o  Leverage  Content  Delivery  Networks  (CDNs)  such  as  Cloudflare  or Akamai to deliver static resources (e.g., images, videos) quickly across different geographical locations.
+
+
+
+
+
+
+
+
+33
+2. Security-
+
+Objective: Protect user data, prevent unauthorized access, and ensure compliance with industry standards.
+
+	Data Protection:
+o  Encrypt sensitive user data (e.g., passwords, personal information) at rest using AES-256 and in transit using TLS 1.3.
+o  Use hashing algorithms (e.g., bcrypt or Argon2) for storing passwords. 	Authentication and Authorization:
+o  Implement secure user authentication mechanisms, such as OAuth 2.0 or OpenID Connect, to support third-party logins.
+o  Enforce role-based access control (RBAC) to restrict access to sensitive operations based on user roles.
+	Threat Prevention:
+o  Use Web Application Firewalls (WAFs) to block common attack vectors like SQL injection, cross-site scripting (XSS), and distributed denial of service (DDoS) attacks.
+o  Regularly audit and patch software to address vulnerabilities. 	Compliance:
+o  Ensure  compliance  with  regulations  like  GDPR,  CCPA,  or  HIPAA, depending on the regions served.
+o  Implement privacy-by-design principles to protect user data and minimize its usage.
+
+
+
+
+3. Scalability-
+
+Objective:  Enable  the  system  to  handle  growth  in  users,  content,  and  features efficiently.
+
+	Horizontal and Vertical Scaling:
+o  Utilize cloud-native technologies to dynamically add resources (horizontal scaling) or increase the capacity of existing resources (vertical scaling).
+o  Use Kubernetes or Amazon ECS for container orchestration to manage scaling efficiently.
+	Microservices Architecture:
+o  Decompose Innovita’s platform into microservices (e.g., user management, content management, notifications) to allow independent scaling of high-demand services.
+	Load Balancing:
+
+
+
+34
+o  Use  load  balancers  (e.g.,  AWS  Elastic  Load  Balancer,  NGINX)  to distribute incoming traffic across multiple servers, ensuring reliability and performance.
+	Event-Driven Systems:
+o  Adopt message brokers like Apache Kafka or RabbitMQ to handle spikes in  demand,  enabling  asynchronous  processing  of  tasks  like  sending notifications or processing media uploads.
+
+
+
+
+4. Availability and Reliability-
+
+Objective: Maintain consistent uptime and recover quickly from failures.
+
+	High Availability:
+o  Deploy resources across multiple availability zones or regions to minimize the impact of localized outages.
+o  Implement failover mechanisms for critical services to ensure continuity during failures.
+	Disaster Recovery:
+o  Regularly back up databases and store them in geographically distributed locations.
+o  Define  a  recovery  time  objective  (RTO)  and  recovery  point  objective (RPO) to guide disaster recovery strategies.
+	Monitoring and Alerts:
+o  Use monitoring tools like Prometheus, Grafana, or Datadog to track system health and performance.
+o  Set up automated alerts for critical issues, such as server downtime or security breaches.
+
+
+
+
+5. Usability and Accessibility-
+
+Objective: Ensure the platform is easy to use and accessible to all users, including those with disabilities.
+
+	Responsive Design:
+o  Ensure Innovita's interface adapts seamlessly to various devices, including desktops, tablets, and smartphones.
+o  Use frameworks like Bootstrap or Tailwind CSS to implement responsive designs.
+	Accessibility Standards:
+
+
+35
+o  Adhere to Web Content Accessibility Guidelines (WCAG) 2.1 to support users with disabilities.
+o  Features  such  as  screen  reader  compatibility,  keyboard  navigation,  and appropriate color contrast ratios should be incorporated.
+
+
+
+
+6. Maintainability-
+
+Objective: Facilitate efficient system updates, troubleshooting, and enhancements.
+
+	Code Modularity:
+o  Maintain modular, well-documented codebases to simplify debugging and updates.
+o  Use  coding  standards  and  linters  (e.g.,  ESLint,  Pylint)  to  enforce  best practices.
+	CI/CD Pipelines:
+o  Automate  the  build,  testing,  and  deployment  processes  to  minimize downtime and reduce manual errors.
+	Documentation:
+o  Maintain  comprehensive  technical  documentation  for  developers  and operational   teams,   ensuring   smooth   knowledge   transfer   and   system management.
+
+
+System Architecture
+
+Frontend Architecture-
+
+Component Layer:
+This layer is responsible for rendering the user interface and managing interactions between users and the system.
+
+1.  UI Components:
+o  Modular, reusable components (e.g., buttons, forms, cards) designed using modern libraries like React, Angular, or Vue.js.
+o  Encourages a consistent design language across the application by adhering to a shared design system (e.g., Material-UI, Tailwind CSS).
+2.  State Management:
+o  Manages  the  state  of  the  application,  ensuring  data  consistency  across components.
+o  Tools like Redux, Vuex, or Context API can be used to handle global state, such as user authentication status or notifications.
+
+
+
+36
+3.  Route Handling:
+o  Implements  client-side  routing  for  seamless  navigation  between  pages without requiring full-page reloads.
+o  Tools like React Router or Vue Router can manage dynamic routes and nested views.
+
+Service Layer:
+This layer interacts with the backend to fetch and process data for the frontend.
+
+1.  API Integration:
+o  Handles communication with backend APIs using libraries like Axios or Fetch.
+o  Implements error handling and retry mechanisms to ensure data retrieval reliability.
+2.  Data Processing:
+o  Processes raw data received from APIs into a format suitable for the UI components.
+o  Ensures   that   transformations   (e.g.,   sorting,   filtering)   are   performed efficiently to minimize computation on the frontend.
+3.  Cache Management:
+o  Reduces the number of API calls by caching frequently accessed data.
+o  Tools like Redux Persist, localStorage, or service workers (for Progressive Web Apps) can manage client-side caching.
+
+
+
+
+Backend Architecture-
+
+API	Layer: This layer serves as the interface between the frontend and the backend services.
+
+1.  REST Endpoints:
+o  Exposes resources like users, content, and interactions through RESTful APIs (e.g., /api/users, /api/posts).
+o  Adheres to HTTP standards (GET, POST, PUT, DELETE) for consistency and predictability.
+2.  Authentication Middleware:
+o  Ensures secure access to endpoints by validating user credentials or tokens. o  Implements authentication mechanisms such as JWT (JSON Web Tokens),
+OAuth2, or session-based authentication. 3.  Request Handling:
+
+
+
+
+
+37
+o  Handles incoming HTTP requests, validates input, and forwards them to the appropriate service layer functions.
+o  Employs libraries like Express.js (Node.js) or Flask (Python) for routing and middleware management.
+
+Service Layer:
+Responsible for executing the core business logic and orchestrating backend operations.
+
+1.  Business Logic:
+o  Encodes the rules and workflows specific to Innovita’s functionality (e.g., user role permissions, content moderation).
+o  Ensures compliance with application-specific constraints and requirements. 2.  Data Processing:
+o  Transforms raw data from the database or external services into formats suitable for API responses.
+o  Implements aggregation, filtering, and formatting logic to support frontend requirements.
+3.  External Integrations:
+o  Manages  interactions  with  third-party  services  like  payment  gateways, analytics platforms, or cloud storage.
+o  Ensures robust error handling and retries for critical integrations.
+
+
+
+38
+Software Functional Specification for Innovita
+
+
+
+
+
+1. Overview
+
+This document outlines the detailed functional specifications for Innovita, a platform for short video content creation, interaction, and monetization with a focus on innovation and upcycled art. It includes all features, user interactions, and system behavior to ensure alignment during development.
+
+
+
+
+2. Functional Requirements
+
+User Management
+
+	User Registration and Login:
+o  Support for email/password-based registration.
+o  OAuth 2.0-based social login (Google, Facebook). o  Password recovery via email.
+o  Two-factor authentication (2FA). 	User Profiles:
+o  Editable profile information (username, bio, profile picture). o  Public and private profile settings.
+o  Activity feed displaying uploaded and liked videos. 	Account Management:
+o  Delete account functionality with data export options. o  Settings for notifications, privacy, and linked accounts.
+
+
+
+
+Video Creation and Editing
+
+	Video Upload:
+o  Upload from device storage or record directly within the platform. o  Support for common formats (MP4, MOV, etc.) with size limits.
+	Editing Tools:
+o  Video trimming and merging.
+o  Text overlays with font and color options.
+o  Audio integration (background music, sound effects). o  Filters and effects for visual enhancements.
+
+
+
+39
+	Preview and Save Drafts:
+o  Live preview of edits before publishing.
+o  Option to save and revisit drafts for later editing.
+
+
+
+
+Content Interaction
+
+	Social Features:
+o  Like, comment, and share videos within the platform. o  Notifications for likes, comments, and shares.
+	User Engagement:
+o  Follow/unfollow functionality for creators.
+o  Personalized feed based on followed creators and AI recommendations. 	Cross-Platform Sharing:
+o  Share videos on external social media platforms (Instagram, TikTok, Facebook).
+
+
+
+
+Monetization and E-Commerce
+
+	Monetization Options:
+o  Enable creators to sell digital products (e.g., upcycled art) or physical goods.
+o  Support for ad revenue sharing based on video views. 	Transaction Features:
+o  Integrated payment gateway for secure transactions (e.g., Stripe, PayPal). o  Track sales and earnings through a dashboard.
+	Marketplace Integration:
+o  Browse and purchase upcycled art directly on the platform. o  Filter by categories, price range, or popularity.
+
+
+
+
+Documentation and Learning Resources
+
+	Guides and Tutorials:
+o  Step-by-step walkthroughs for new users.
+o  Advanced tutorials on video editing and monetization strategies. 	FAQs and Support:
+o  Comprehensive FAQ section with search functionality. o  Contact form for technical support or queries.
+
+
+
+40
+	Timestamped Indexes:
+o  Indexed tutorials with timestamps for quick navigation.
+
+
+
+
+Search and Discovery
+
+	Search Functionality:
+o  Search videos, creators, and tags.
+o  Advanced filters (date, category, popularity). 	AI-Driven Recommendations:
+o  Personalized feed based on user behavior and preferences. o  Suggestions for similar content or creators.
+
+
+
+
+Administrative Features
+
+	Content Moderation:
+o  Tools for reporting and reviewing inappropriate content. o  Flagged content review workflow for admins.
+	User Management:
+o  Suspend or ban accounts violating community guidelines. o  View activity logs for compliance and security.
+	Analytics and Reporting:
+o  Platform-wide metrics on active users, uploads, and engagement. o  Creator-specific analytics (views, interactions, revenue).
+
+
+
+
+System Behavior
+
+	Scalability:
+o  Auto-scaling infrastructure to handle traffic spikes.
+o  Support for a growing number of users and video uploads. 	Performance:
+o  Optimize video loading with CDNs.
+o  Ensure real-time interaction with minimal latency. 	Security:
+o  Enforce secure authentication (OAuth 2.0, 2FA). o  Comply with GDPR for user data handling.
+
+
+
+
+
+41
+
+
+
+
+
+3. Non-Functional Requirements
+
+Usability
+
+	User-friendly interface with consistent design.
+	Accessibility features for visually impaired users (e.g., screen reader compatibility).
+
+Reliability
+
+	99.9% uptime target with robust backup and recovery mechanisms. 	Error reporting for seamless debugging.
+
+Performance
+
+	Videos should load in under 2 seconds for most users. 	Real-time updates for social interactions.
+
+Maintainability
+
+    Modular codebase to support feature additions.     Comprehensive documentation for developers.
+
+Compliance
+
+	Adhere to GDPR, CCPA, and other regional data protection regulations. 	Ensure secure payment processing compliant with PCI DSS.
+
+
+
+
+4. Workflow Examples
+
+User Uploading and Sharing a Video
+
+1.  User logs in and navigates to the "Create" section.
+2.  Uploads a video from their device or records directly. 3.  Uses editing tools to enhance the video.
+4.  Previews the edited video and saves or publishes it.
+5.  Published video appears in the user’s profile and feed.
+
+
+
+
+42
+Creator Monetizing Content
+
+1.  Creator sets up a shop in their profile.
+2.  Lists digital or physical products with descriptions and prices. 3.  Users purchase directly through integrated payment gateways. 4.  Earnings are tracked and withdrawn by the creator.
+
+
+
+
+5. Glossary
+
+	CDN: Content Delivery Network, used for efficient media distribution. 	2FA: Two-Factor Authentication, an extra layer of security.
+	OAuth 2.0: Protocol for secure and streamlined authentication.
+
+
+
+46
+
+
+System Implementation
+
+
+
+
+
+Testing for Innovita
+
+The testing phase is critical in ensuring that Innovita operates smoothly and fulfills its objectives. The following testing methodologies were applied to validate the system’s performance and reliability:
+
+
+
+
+1. Unit Testing
+
+	Objective: To test individual components of the Innovita platform in isolation to ensure they function correctly.
+	Focus Areas:
+o  Video creation tools (e.g., trimming, editing suite). o  Payment gateway integration.
+o  User registration and authentication modules.
+	Process: Each function, like the "upload video" or "add to cart" feature, was tested with various inputs to ensure they handle edge cases, errors, and normal operations effectively.
+	Example: Testing whether a 60-second video upload is processed correctly or fails gracefully for unsupported formats.
+
+
+
+
+2. Integration Testing
+
+	Objective: To ensure that different modules and systems within Innovita work seamlessly together.
+	Key Integrations Tested:
+o  React.js frontend and Appwrite backend communication. o  Video uploading and storage systems.
+o  E-commerce transactions through multiple payment gateways.
+	Process: Simulating user actions, such as uploading a video and immediately listing the product for sale, to check for end-to-end functionality.
+
+
+
+
+
+47
+	Example: Ensuring that after a video upload, the metadata (title, description, tags) is correctly stored and displayed on the user’s dashboard.
+
+
+
+
+3. Functional Testing
+
+	Objective: To verify that the platform’s features meet the functional requirements specified in the project scope.
+	Key Features Tested:
+o  Creating and sharing short videos. o  Documentation tools for tutorials.
+o  Buy and sell functionality with encrypted transactions.
+	Example: Testing the "Buy" feature to confirm that adding items to the cart, choosing payment options, and receiving order confirmations work as expected.
+
+
+
+
+4. Performance Testing
+
+	Objective:  To  ensure  the  system  performs  well  under  various  conditions, including peak loads.
+	Key Metrics Evaluated:
+o  Load Testing: Simulating hundreds of simultaneous users to check server response times.
+o  Stress Testing: Testing the system’s behavior under extreme conditions, such as uploading large video files.
+o  Scalability Testing: Ensuring the system scales as the number of users or transactions increases.
+	Example: Monitoring page load times when 1,000 users browse simultaneously during a flash sale.
+
+
+
+
+5. User Acceptance Testing (UAT)
+
+	Objective: To validate that Innovita meets the expectations of its end-users.
+	Participants:  A  group  of  beta  users,  including  artists,  craft  enthusiasts,  and environmental advocates.
+	Methodology:
+o  Conducted real-world tasks, such as uploading videos, purchasing items, and interacting with other users.
+
+
+
+
+48
+o  Collected  feedback requests.
+	Outcome:  Improvements feedback.
+
+to  identify  usability  issues  and  additional  feature
+
+in  UI  design  and  feature  optimization  based  on
+
+
+
+
+
+6. Security Testing
+
+	Objective: To identify and address vulnerabilities in the platform. 	Tests Conducted:
+o  Ensuring encrypted transactions during purchases.
+o  Validating user authentication and session management.
+o  Preventing unauthorized access to user-generated content.
+	Example: Testing the system to ensure sensitive user information (e.g., payment details) is securely handled and not exposed during transactions.
+
+
+
+
+7. Regression Testing
+
+	Objective:  To  confirm  that  recent  updates  or  bug  fixes  haven’t  negatively impacted existing functionalities.
+	Process: Re-testing all critical features after each update or feature addition.
+	Example: After integrating a new payment method, re-testing all e-commerce functionalities.
+
+
+
+
+Key Outcomes of Testing
+
+	A   fully   functional   system   capable   of   supporting   short   video   uploads, documentation, and e-commerce.
+	Improved user experience through seamless navigation and intuitive workflows. 	High reliability under varied load conditions, ensuring consistent performance. 	Enhanced security for user data and transactions.
+
+
+
+
+
+
+
+
+
+
+
+49
+System Input and Output Screenshots
+
+
+
+
+
+	Inputs:
+o  User registration (email, username, password).
+o  Video uploads with details (title, description, tags).
+o	if (isError) return Payment information during purchases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use client"
+import React, { useEffect, useState } from "react"; import UploadLayout from "../layouts/UploadLayout";
+import { BiLoaderCircle, BiSolidCloudUpload } from "react-icons/bi" import { AiOutlineCheckCircle } from "react-icons/ai";
+import { PiKnifeLight } from 'react-icons/pi' import { useRouter } from "next/navigation"; import { useUser } from "@/app/context/user" import { UploadError } from "../types";
+import useCreatePost from "../hooks/useCreatePost";
+
+export default function Upload() { const contextUser = useUser() const router = useRouter()
+
+let [fileDisplay, setFileDisplay] = useState<string>(''); let [caption, setCaption] = useState<string>('');
+
+
+50
+let [file, setFile] = useState<File | null>(null);
+let [error, setError] = useState<UploadError | null>(null); let [isUploading, setIsUploading] = useState<boolean>(false);
+
+useEffect(() => {
+if (!contextUser?.user) router.push('/') }, [contextUser])
+
+const onChange = (event: React.ChangeEvent<HTMLInputElement>) => { const files = event.target.files;
+
+if (files && files.length > 0) { const file = files[0];
+const fileUrl = URL.createObjectURL(file); setFileDisplay(fileUrl);
+setFile(file); }
+}
+
+const discard = () => { setFileDisplay('') setFile(null) setCaption('')
+}
+
+const clearVideo = () => { setFileDisplay('') setFile(null)
+}
+
+const validate = () => { setError(null)
+let isError = false
+
+if (!file) {
+setError({ type: 'File', message: 'A video is required'}) isError = true
+} else if (!caption) {
+setError({ type: 'caption', message: 'A caption is required'}) isError = true
+}
+return isError }
+
+const createNewPost = async () => { let isError = validate()
+
+if (!file || !contextUser?.user) return setIsUploading(true)
+
+try {
+await useCreatePost(file, contextUser?.user?.id, caption) router.push(/profile/${contextUser?.user?.id}) setIsUploading(false)
+} catch (error) { console.log(error) setIsUploading(false) alert(error)
+}
+
+
+
+51
+}
+
+return ( <>
+<UploadLayout>
+<div  className="w-full  mt-[80px]  mb-[40px]  bg-white  shadow-lg rounded-md py-6 md:px-10 px-4">
+<div>
+<h1	className="text-[23px]	font-semibold">Upload video</h1>
+<h2 className="text-gray-400 mt-1">Post a video to your account</h2>
+</div>
+
+<div className="mt-8 md:flex gap-6">
+
+{!fileDisplay ? <label
+htmlFor="fileInput" className="
+md:mx-0 mx-auto mt-4 mb-6 flex
+flex-col items-center justify-center w-full
+max-w-[260px] h-[470px] text-center p-3
+border-2 border-dashed border-gray-300 rounded-lg
+hover:bg-gray-100 cursor-pointer
+" >
+<BiSolidCloudUpload size="40" color="#b3b3b1"/>
+<p className="mt-4 text-[17px]">Select video to upload</p>
+<p className="mt-1.5 text-gray-500 text-[13px]">Or drag and drop a file</p>
+<p className="mt-12 text-gray-400 text-sm">MP4</p> <p className="mt-2 text-gray-400 text-[13px]">Up
+to 30 minutes</p>
+<p className="mt-2 text-gray-400 text-[13px]">Less than 2 GB</p>
+<label htmlFor="fileInput"
+className="px-2 py-1.5 mt-8 text-white text-[15px] w-[80%] bg-[#F02C56] rounded-sm cursor-pointer"
+>
+Select file </label>
+<input
+
+
+
+52
+type="file" id="fileInput" onChange={onChange} hidden accept=".mp4"
+/> </label>
+:
+<div className="
+md:mx-0 mx-auto mt-4 md:mb-12 mb-16 flex
+items-center justify-center w-full
+max-w-[260px] h-[540px]
+p-3 rounded-2xl
+cursor-pointer relative
+" >
+{isUploading ? (
+<div  className="absolute  flex  items-center justify-center z-20 bg-black h-full w-full rounded-[50px] bg-opacity-50">
+<div className="mx-auto flex items-center justify-center gap-1">
+<BiLoaderCircle	className="animate-spin" color="#F12B56" size={30} />
+<div	className="text-white	font-bold">Uploading...</div>
+</div> </div>
+) : null <img
+className="absolute z-20 pointer-events-none" src="/images/mobile-case.png"
+/> <img
+className="absolute right-4 bottom-6 z-20" width="90"
+src="/images/ii.png" />
+<video autoPlay loop muted
+className="absolute rounded-xl object-cover z-10 p-[13px] w-full h-full"
+src={fileDisplay} />
+
+/> >
+
+
+
+53
+</div> </div>
+</UploadLayout>
+
+Outputs:
+
+Dashboards displaying user activity (e.g., uploaded videos, sales data).
+
+o  Notifications for successful uploads or transactions. o  Analytics and engagement metrics (likes, shares).
+
+Suggested visual: A login screen with fields and buttons, alongside a dynamic dashboard interface.
+
+
+
+
+58
+Limitations and Scope of the Innovita Project
+
+
+
+
+Limitations
+1.  Content Moderation
+o  Challenge: Moderating user-generated content to ensure it aligns with the platform's focus on sustainability and creativity.
+o  Impact:  Inappropriate  or  low-quality  content  could  detract  from  the platform’s mission and user experience.
+o  Mitigation:  Implement  AI-based  moderation  systems  and  community reporting mechanisms.
+2.  Dependency on Internet Connectivity
+o  Challenge: Innovita heavily relies on stable and fast internet for smooth video uploads, streaming, and transactions.
+o  Impact: Users in regions with poor connectivity may face issues using core features.
+o  Mitigation: Offline capabilities like content previews or drafts could help alleviate this issue.
+3.  Initial Funding and Resource Constraints
+o  Challenge:   Building   and   scaling   features   like   AI   integration,   VR exhibitions,   and   secure   payment   systems   require   significant   initial investments.
+o  Impact:  Limited  funding  could  delay  feature  rollouts  or  affect  user acquisition strategies.
+o  Mitigation:  Partnering  with  eco-conscious  brands  or  seeking  venture funding could support development.
+4.  User Engagement
+o  Challenge:  Competing  with  established  platforms  like  Instagram  and TikTok for user attention and retention.
+o  Impact: Limited user base growth in the initial phase might impact platform sustainability.
+o  Mitigation:   Providing   unique,   niche   content   and   incentivizing   user participation through gamification or rewards.
+5.  Technical Challenges
+o  Challenge: Integration of diverse technologies such as React.js, Next.js, and Appwrite with seamless performance.
+o  Impact:  Bugs  or  downtimes  could  disrupt  user  experiences,  especially during peak hours.
+o  Mitigation: Rigorous testing and a robust support team to address issues swiftly.
+
+
+
+59
+
+
+Scope of the Project
+
+1.  Enhancing Sustainability
+o  Innovita  can  expand  its  eco-conscious  approach  by  collaborating  with environmental   organizations   and   artisans   focused   on   upcycling   and recycling.
+o  Educational campaigns via the platform can promote sustainability at a larger scale, influencing societal behavior.
+2.  AI-Powered Features
+o  AI can analyze user preferences to suggest personalized projects or tutorials.
+o  Content creators could leverage AI tools for editing videos, adding effects, or optimizing their content for better engagement.
+3.  Virtual Reality (VR) Integration
+o  Develop VR exhibitions where users can showcase and explore upcycled art projects in immersive environments.
+o  Virtual workshops can allow users to learn creative skills interactively. 4.  Expanded Marketplace
+o  Introduce options for custom orders, allowing buyers to request personalized products directly from creators.
+o  Collaborate with courier services to ensure faster and more reliable deliveries.
+5.  Community Building
+o  Build an online community through forums, groups, or challenges related to creative recycling and art projects.
+o  Recognize top contributors with awards, features, or monetary incentives to foster engagement.
+6.  Global Reach
+o  Launch multilingual support to cater to a global audience.
+o  Focus on country-specific content and collaborations to localize the platform’s offerings.
+
+
+References
+
+Academic Sources
+
+1.  "Design Patterns in Modern Web Development" by Smith et al., 2021
+o  Overview: This book discusses common design patterns and architectural strategies in web development. It emphasizes modularity, scalability, and maintainability in modern frameworks like React.js and Next.js.
+o  Relevance to Innovita:
+ Provides insights into creating reusable and scalable components.
+ Informs the implementation of best practices in front-end and back-end architecture.
+2.  "Cloud Scalability for SaaS Platforms," Journal of Computer Engineering, 2020
+o  Overview:  This  journal  article  focuses  on  strategies  for  scaling  SaaS platforms using cloud technologies. It covers auto-scaling, load balancing, and microservices architectures.
+o  Relevance to Innovita:
+ Guides the design of a robust infrastructure capable of handling high traffic and video uploads.
+ Offers  solutions  for horizontal scaling and cost-efficient resource allocation.
+
+
+
+
+Technical Documentation
+
+1.  React.js and Next.js Official Documentation
+o  Overview:  Comprehensive  guides  to  React.js  and  Next.js,  two  popular JavaScript  libraries/frameworks  for  building  dynamic  web  applications. Covers  topics  like  component  design,  server-side  rendering,  and  API routes.
+o  Relevance to Innovita:
+ Ensures the development team understands how to implement user-friendly interfaces and fast-loading pages.
+
+
+
+
+61
+ Details server-side rendering (SSR) and static site generation (SSG) to optimize performance.
+2.  Appwrite API and Architecture Guides
+o  Overview: Documentation for Appwrite, a backend-as-a-service platform. It includes instructions for authentication, database operations, and cloud functions.
+o  Relevance to Innovita:
+ Helps  in  integrating  secure  authentication,  database  management, and backend functionality.
+ Supports rapid prototyping and development of platform features.
+
+
+
+
+Industry Standards
+
+1.  OWASP Guidelines for Secure Web Applications
+o  Overview:   The   Open   Web   Application   Security   Project   (OWASP) provides guidelines to secure web applications against common threats like SQL injection, cross-site scripting (XSS), and broken authentication.
+o  Relevance to Innovita:
+ Ensures the platform adheres to security best practices to protect user data and prevent breaches.
+ Guides the implementation of measures like input validation, secure session handling, and encryption.
+2.  PCI DSS Standards for Payment Security
+o  Overview: The Payment Card Industry Data Security Standard (PCI DSS) outlines   requirements   for   secure   handling   of   payment   transactions, including data encryption and fraud prevention.
+o  Relevance to Innovita:
+ Ensures compliance in handling user transactions securely.
+ Protects sensitive payment information during e-commerce activities on the platform.
+
+
+
+
+Research Papers
+
+1.  "AI-Based Recommendation Systems for User Engagement," IEEE, 2019
+o  Overview: This paper explores machine learning techniques for building recommendation  systems  that  increase  user  engagement  by  tailoring content to individual preferences.
+o  Relevance to Innovita:
+
+
+
+62
+ Guides   the   development   of   personalized   feeds   and   content suggestions to enhance user retention.
+ Informs  the design of  algorithms  that  analyze  user behavior  and preferences.
+2.  "Video Compression Techniques in Modern Streaming Platforms," ACM, 2020
+o  Overview:   This  paper  reviews  advancements  in  video  compression technologies	to	optimize	storage	and	streaming	quality   without compromising user experience.
+o  Relevance to Innovita:
+ Supports the development of efficient media processing workflows, enabling seamless playback across devices.
+ Provides insights into reducing storage costs while maintaining high video quality.
+
+
+
+
+o  technical articles on best practices for monitoring web applications, using tools like Prometheus, Grafana, and ELK Stack.
+o  Relevance to Innovita:
+ Offers   techniques   for   tracking   performance   metrics,   detecting bottlenecks, and improving uptime.
+
+Guides the setup of alert systems to maintain system Web Resources
+
+1.  Tutorials on CI/CD Automation from dev.to
+o  Overview:  Dev.to  hosts  practical  articles  and  tutorials  on  setting  up continuous integration and continuous deployment (CI/CD) pipelines using tools like Jenkins, GitHub Actions, and Docker.
+o  Relevance to Innovita:
+ Provides step-by-step instructions to automate the build, test, and deployment process.
+ Ensures the platform achieves faster and more reliable deployments. 2.  Performance Monitoring Best Practices from medium.com
+ Overview: Medium features health.
+
+
+
+
+
+
+
+
+
+
+
+
+63
+
+Conclusion
+
+
+
+
+
+Innovita, as a hybrid platform, bridges the gap between social media and e-commerce by promoting  sustainability,  creativity,  and  meaningful  content  creation.  Its  innovative approach  empowers  users  to  engage  in  eco-conscious  practices  while  fostering  a marketplace for unique handmade art and crafts. Below is a detailed breakdown of the project's achievements and its potential impact:
+
+
+
+
+Achievements
+
+1.  Hybrid Platform
+Innovita successfully integrates short video creation, educational content, and e-commerce functionalities into a cohesive user experience. Users can not only showcase their creativity but also monetize their efforts by selling upcycled and handmade products.
+2.  Promoting Sustainability
+By encouraging upcycling and recycling, Innovita aligns with global environmental goals. It provides an avenue for users to learn about sustainable practices while directly contributing to environmental conservation.
+3.  User-Centric Design
+o  Tools like step-by-step documentation, short video editing, and a seamless marketplace ensure ease of use.
+o  Dedicated features like wish lists, ratings, and multiple payment options enhance user satisfaction and trust.
+4.  Technology-Driven Innovation
+Leveraging advanced technologies like React.js, Appwrite, and Next.js ensures a robust, scalable, and user-friendly platform. The choice of technology underpins the project's efficiency, enabling real-time interactions and secure transactions.
+
+
+
+
+Impact
+
+
+1.  Empowering
+Innovita provides  a stage for  creators,  artists,  and
+
+Creativity environmentally conscious
+
+
+
+
+
+
+64
+individuals to share their talent and ideas with a wider audience. This contributes to cultural enrichment and individual empowerment.
+2.  Environmental Awareness
+The platform serves as a catalyst for spreading awareness about environmental issues and solutions. By integrating education with creativity, it inspires users to adopt sustainable habits.
+3.  Economic Opportunities
+Innovita fosters economic empowerment by enabling creators to sell their products. This feature not only generates income for individuals but also nurtures small-scale businesses.
+
+
+
+
+Future Prospects
+
+1.  AI-Powered Personalization
+Incorporating AI for personalized recommendations will elevate the user experience, helping individuals discover relevant content and products based on their preferences.
+2.  Virtual Reality Exhibitions
+Innovita aims to create immersive VR exhibitions where users can explore and purchase art in a virtual gallery setting. This innovation will make art accessible globally.
+3.  Global Community Building
+By connecting users with shared interests, Innovita envisions building a global community that values sustainability, creativity, and meaningful interactions.
+
+
+
+
+Conclusion
+
+Innovita is more than just a platform; it is a movement toward a sustainable and creative future. By combining technological advancements with environmental responsibility, Innovita exemplifies how innovation can address societal and ecological challenges. The project’s emphasis on education, creativity, and commerce not only serves individual users but also contributes to the broader goal of sustainable development. Its ongoing evolution, fueled by emerging technologies, ensures its relevance and impact for years to come.
+
+
+Core Video Feed:
+
+Users see a main feed ("For You") displaying video posts from various creators.
+Videos auto-play when they scroll into view and pause when scrolled away.
+Users can navigate between posts on the single post view page using up/down arrows.
+User Accounts:
+
+Users can register for a new account or log in with existing credentials.
+Users can log out.
+Users have profiles displaying their name, bio, profile picture, and uploaded videos.
+Users can edit their own profiles (likely via an "Edit profile" button on their profile page).
+Uploading & Content Creation:
+
+Logged-in users can access an "Upload" page via the top navigation.
+On the Upload page, users select a video file, write a caption, and optionally add details for one primary product to link to the video (Name, Price, URL, Image).
+Clicking "Post" uploads the video and caption, and creates/links the product if details were provided.
+Post Interactions:
+
+Likes: Users can like/unlike posts by clicking the heart icon. The like count is displayed.
+Comments: Users can view comments on a post (likely by clicking the comment icon or on the single post page). Logged-in users can add new comments via an input box. Users can delete their own comments. Comment count is displayed.
+Sharing: A share icon exists, and a share count is displayed (the exact sharing mechanism isn't fully detailed in the code reviewed).
+Rich Text Editor: An edit icon (pencil) exists next to the like/comment/share buttons. Clicking this opens a modal (EditorModal) containing a rich text editor (RichTextEditor.tsx). This allows the post creator (or potentially others, depending on permissions not fully explored) to add or edit formatted text content associated with the post (e.g., a longer description, instructions, story). The content is saved using useCreateRichText and fetched using useGetRichTextByPostId.
+Product Integration:
+
+Shop Page (/shop): Displays a public catalog of all products that have been linked to any video post by any user. Users can click "View Product" to go to the external URL.
+Linking on Upload: As mentioned in Uploading.
+Viewing on Post: A shop icon appears on video posts that have a linked product. Clicking it opens a modal (ProductInfoModal) showing the product details (image, name, price).
+Managing Linked Product (Post Creator): If viewing the product modal on their own post, the creator sees "Edit" and "Delete" buttons instead of "View Product".
+"Edit" opens a modal (EditProductModal) to change the product's name, price, URL, or image.
+"Delete" removes the product entirely (from the database and Shop page) and unlinks it from the post.
+Adding Product After Posting (Post Creator): If a post creator opens the product modal on their own post and no product is linked, they see an "Add Product" button which opens a modal (AddProductModal) to create and link a new product to that specific post.
+Admin Page (/admin):
+
+Accessible only to users whose IDs are listed in the NEXT_PUBLIC_ADMIN_USER_IDS environment variable.
+Displays all products in a responsive card grid.
+Allows admins to "Add New Product" directly to the catalog via a modal.
+Allows admins to "Edit" any existing product via a modal.
+Allows admins to "Delete" any existing product.
+Theme:
+
+Users can toggle between Light and Dark mode using a button (sun/moon icon) in the top navigation bar. The choice is saved locally.
+AI Chatbot:
+
+A floating chat button opens a chat window.
+Users can ask questions.
+The chatbot uses Google Gemini via a backend API route.
+It has a basic system prompt defining its role for Innovita.
+It uses the content of knowledge_base/help_info.txt to try and answer questions specifically about the site (Retrieval-Augmented Generation - RAG).

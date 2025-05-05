@@ -16,55 +16,64 @@ export default function SingleComment({ comment, params }: SingleCommentCompType
     const [isDeleting, setIsDeleting] = useState(false)
 
     const deleteThisComment = async () => {
-        let res = confirm("Are you sure you weant to delete this comment?")
+        let res = confirm("Are you sure you want to delete this comment?") // Corrected typo: weant -> want
         if (!res) return
 
         try {
             setIsDeleting(true)
             await useDeleteComment(comment?.id)
             setCommentsByPost(params?.postId)
-            setIsDeleting(false)
+            // No need to set isDeleting false here, component might unmount
         } catch (error) {
             console.log(error)
             alert(error)
+            setIsDeleting(false) // Set false on error
         }
+        // Removed setIsDeleting(false) from here as it might not be reached if successful
     }
     return (
         <>
-            <div id="SingleComment" className="flex items-center justify-between px-8 mt-4">
-                <div className="flex items-center relative w-full">
-                    <Link href={`/profile/${comment.profile.user_id}`}>
-                        <img 
-                            className="absolute top-0 rounded-full lg:mx-0 mx-auto" 
-                            width="40" 
+            <div id="SingleComment" className="flex items-start justify-between px-4 sm:px-8 mt-4 pb-4 border-b border-gray-100 dark:border-gray-700">
+                <div className="flex items-start relative w-full">
+                    <Link href={`/profile/${comment.profile.user_id}`} className="flex-shrink-0 mt-1">
+                        <img
+                            className="rounded-full"
+                            width="36"
+                            height="36"
                             src={useCreateBucketUrl(comment.profile.image)}
+                            alt={`${comment.profile.name}'s profile`}
                         />
                     </Link>
-                    <div className="ml-14 pt-0.5 w-full">
-
-                        <div className="text-[18px] font-semibold flex items-center justify-between">
-                            <span className="flex items-center">
-                                {comment?.profile?.name} - 
-                                <span className="text-[12px] text-gray-600 font-light ml-1">
-                                    {moment(comment?.created_at).calendar()}
-                                </span>
+                    <div className="ml-3 sm:ml-4 w-full">
+                        <div className="flex items-center justify-between">
+                            {/* Username */}
+                            <span className="text-[16px] sm:text-[17px] font-semibold text-black dark:text-white">
+                                {comment?.profile?.name}
                             </span>
 
+                            {/* Delete Button */}
                             {contextUser?.user?.id == comment.profile.user_id ? (
-                                <button 
-                                    disabled={isDeleting} 
+                                <button
+                                    disabled={isDeleting}
                                     onClick={() => deleteThisComment()}
+                                    className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+                                    aria-label="Delete comment"
                                 >
-                                    {isDeleting 
-                                        ? <BiLoaderCircle className="animate-spin" color="#E91E62" size="20"/>
-                                        : <BsTrash3 className="cursor-pointer" size="25"/>
+                                    {isDeleting
+                                        ? <BiLoaderCircle className="animate-spin text-[#E91E62] dark:text-white" size="18"/>
+                                        : <BsTrash3 className="cursor-pointer text-black dark:text-white" size="18"/>
                                     }
                                 </button>
                             ) : null}
                         </div>
-                        
-                        <p className="text-[15px] font-light">{comment.text}</p>
 
+                        {/* Comment Text */}
+                        <p className="text-[14px] sm:text-[15px] font-normal text-black dark:text-gray-200 break-words mt-1">{comment.text}</p>
+
+                        {/* Timestamp */}
+                        <div className="text-[11px] sm:text-[12px] font-light text-gray-500 dark:text-gray-400 mt-1">
+                            {moment(comment?.created_at).calendar()}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,79 +1,80 @@
 "use client"
 
-import { AiFillHeart } from "react-icons/ai"
-import { ImMusic } from "react-icons/im"
-import Link from "next/link"
-import { useEffect } from "react"
-import PostMainLikes from "./PostMainLikes"
-import useCreateBucketUrl from "../hooks/useCreateBucketUrl"
-import { PostMainCompTypes } from "../types"
+import { AiFillHeart } from "react-icons/ai";
+import { ImMusic } from "react-icons/im";
+import { BsShop } from "react-icons/bs"; // Changed icon
+import { BiLoaderCircle } from 'react-icons/bi'; // For loading state
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import PostActionButtons from "./post/PostActionButtons"; // Import the correct component
+import useCreateBucketUrl from "../hooks/useCreateBucketUrl";
+import { PostMainCompTypes, Product } from "../types"; // Added Product type
+import { useUser } from "../context/user"; // Import user context
+// Removed unused product-related hooks and modals from here
+import PostVideo from "./post/PostVideo"; // Import the new PostVideo component
+import ProductInfoModal from "./modals/ProductInfoModal"; // Import the extracted modal
+import PostHeader from "./post/PostHeader"; // Import the new PostHeader component
+import PostCaption from "./post/PostCaption"; // Import the new PostCaption component
 
 export default function PostMain({ post }: PostMainCompTypes) {
+    // State for the product info/action modal
+    const [showProductModal, setShowProductModal] = useState(false);
+    const contextUser = useUser();
 
-    useEffect(() => {
-        const video = document.getElementById(`video-${post?.id}`) as HTMLVideoElement
-        const postMainElement = document.getElementById(`PostMain-${post.id}`);
+    // Determine if the current user is the post creator (still needed for PostVideo)
+    const isCurrentUserPostCreator = contextUser?.user?.id === post?.profile?.user_id;
 
-        if (postMainElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries[0].isIntersecting ? video.play() : video.pause()
-            }, { threshold: [0.6] });
-        
-            observer.observe(postMainElement);
-        }
-    }, [])
+    // Removed product fetching hooks, state, and modal visibility state - moved to ProductInfoModal
 
+    // Removed IntersectionObserver useEffect - logic moved to PostVideo component
+    // --- Action Handlers ---
+    // Removed action handlers (handleDeleteProduct, handleOpenAddModal, handleOpenEditModal) - moved to ProductInfoModal
+
+    // --- Render ---
     return (
         <>
-            <div id={`PostMain-${post.id}`} className="flex border-b py-6">
+            <div id={`PostMain-${post.id}`} className="flex flex-col md:flex-row items-start border-b dark:border-gray-800 py-4 md:py-6 w-full">
 
-                <div className="cursor-pointer">
-                    <img className="rounded-full max-h-[60px]" width="60" src={useCreateBucketUrl(post?.profile?.image)} />
+                {/* Post Content */}
+                {/* Top section (mobile) / Left side (desktop) - Profile info and captions */}
+                <div className="w-full md:w-1/3 px-3 md:px-4 mb-3 md:mb-0">
+                    {/* Use the extracted PostHeader component */}
+                    <PostHeader profile={post.profile} />
+
+                    {/* Use the extracted PostCaption component */}
+                    <PostCaption text={post.text} />
                 </div>
 
-                <div className="pl-3 w-full px-4">
-                    <div className="flex items-center justify-between pb-0.5">
-                        <Link href={`/profile/${post.profile.user_id}`}>
-                            <span className="font-bold hover:underline cursor-pointer">
-                                {post.profile.name}
-                            </span>
-                        </Link>
+                {/* Bottom section (mobile) / Right side (desktop) - Video and actions */}
+                <div className="w-full md:w-2/3 flex justify-center md:justify-start">
+                    {/* Container for Video and Action Buttons */}
+                    <div className="flex flex-col md:flex-row items-center md:items-end gap-3 md:gap-4 w-full md:w-auto">
+                        {/* PostVideo component */}
+                        <PostVideo
+                            post={post}
+                            isCurrentUserPostCreator={isCurrentUserPostCreator}
+                            onShopClick={() => setShowProductModal(true)}
+                        />
 
-                        <button className="border text-[15px] px-[21px] py-0.5 border-[#F02C56] text-[#F02C56] hover:bg-[#ffeef2] font-semibold rounded-md">
-                            Follow
-                        </button>
-                    </div>
-                    <p className="text-[15px] pb-0.5 break-words md:max-w-[400px] max-w-[300px]">{post.text}</p>
-                    <p className="text-[14px] text-gray-500 pb-0.5">#fun #cool #SuperAwesome</p>
-                    <p className="text-[14px] pb-0.5 flex items-center font-semibold">
-                        <ImMusic size="17"/>
-                        <span className="px-1">original sound - AWESOME</span>
-                        <AiFillHeart size="20"/>
-                    </p>
-
-                    <div className="mt-2.5 flex">
-                        <div
-                            className="relative min-h-[480px] max-h-[580px] max-w-[260px] flex items-center bg-black rounded-xl cursor-pointer"
-                        >
-                            <video 
-                                id={`video-${post.id}`}
-                                loop
-                                controls
-                                muted
-                                className="rounded-xl object-cover mx-auto h-full" 
-                                src={useCreateBucketUrl(post?.video_url)}
-                            />
-                            <img 
-                                className="absolute right-2 bottom-10" 
-                                width="90" 
-                                src="/images/ii.png"
-                            />
+                        {/* Action Buttons Component - horizontal on mobile, vertical on desktop */}
+                        <div className="md:hidden flex justify-center w-full bg-black bg-opacity-70 py-3 px-4 rounded-lg mt-2">
+                            <PostActionButtons post={post} layout="horizontal" />
                         </div>
-                        
-                        <PostMainLikes post={post} />
+                        <div className="hidden md:block">
+                            <PostActionButtons post={post} layout="vertical" />
+                        </div>
                     </div>
                 </div>
             </div>
+
+            {/* Render the extracted Product Info Modal */}
+            <ProductInfoModal
+                postId={post.id}
+                primaryProductId={post.primary_product_id}
+                isCurrentUserPostCreator={isCurrentUserPostCreator}
+                isVisible={showProductModal}
+                onClose={() => setShowProductModal(false)}
+            />
         </>
-    )
+    );
 }

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Local Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #F02C56;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #d9254a;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clear Local Storage</h1>
+    <p>This page will clear your browser's local storage for this website, which should fix issues with cached data including references to non-existent products.</p>
+    <p><strong>Note:</strong> This will log you out and reset any saved preferences.</p>
+    
+    <button id="clearButton">Clear Local Storage</button>
+    
+    <div id="success" class="success">
+        Local storage cleared successfully! You can now close this page and return to the application.
+    </div>
+    
+    <script>
+        document.getElementById('clearButton').addEventListener('click', function() {
+            try {
+                localStorage.clear();
+                document.getElementById('success').style.display = 'block';
+                this.disabled = true;
+                console.log('Local storage cleared successfully');
+            } catch (error) {
+                console.error('Error clearing local storage:', error);
+                alert('Error clearing local storage: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

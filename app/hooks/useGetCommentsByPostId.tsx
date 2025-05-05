@@ -1,9 +1,9 @@
-import { database, Query } from "@/libs/AppWriteClient"
+import { getDatabases, Query } from "@/libs/AppWriteClient" // Use getter function
 import useGetProfileByUserId from "./useGetProfileByUserId";
 
 const useGetCommentsByPostId = async (postId: string) => {
     try {
-        const commentsResult = await database.listDocuments(
+        const commentsResult = await getDatabases().listDocuments( // Use getter
             String(process.env.NEXT_PUBLIC_DATABASE_ID), 
             String(process.env.NEXT_PUBLIC_COLLECTION_ID_COMMENT), 
             [ 
@@ -16,7 +16,8 @@ const useGetCommentsByPostId = async (postId: string) => {
             const profile = await useGetProfileByUserId(comment.user_id)
 
             return {
-                id: comment?.$id, 
+                $id: comment?.$id, // Add the $id field
+                id: comment?.$id, // Keep id for consistency or potential usage
                 user_id: comment?.user_id,
                 post_id: comment?.post_id,
                 text: comment?.text,

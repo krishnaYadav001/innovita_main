@@ -14,9 +14,9 @@ import useUpdateProfile from "@/app/hooks/useUpdateProfile";
 import useChangeUserImage from "@/app/hooks/useChangeUserImage";
 import useUpdateProfileImage from "@/app/hooks/useUpdateProfileImage";
 import useCreateBucketUrl from "@/app/hooks/useCreateBucketUrl";
- 
+
 export default function EditProfileOverlay() {
-    
+
     let { currentProfile, setCurrentProfile } = useProfileStore()
     let { setIsEditProfileOpen } = useGeneralStore()
 
@@ -40,7 +40,7 @@ export default function EditProfileOverlay() {
 
     const getUploadedImage = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = event.target.files && event.target.files[0];
-        
+
         if (selectedFile) {
             setFile(selectedFile);
             setUploadedImage(URL.createObjectURL(selectedFile));
@@ -54,14 +54,14 @@ export default function EditProfileOverlay() {
         let isError = validate()
         if (isError) return
         if (!contextUser?.user) return
-        
+
         try {
             setIsUpdating(true)
             await useUpdateProfile(currentProfile?.id || '', userName, userBio)
             setCurrentProfile(contextUser?.user?.id)
             setIsEditProfileOpen(false)
             router.refresh()
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -105,44 +105,44 @@ export default function EditProfileOverlay() {
         if (!userName) {
             setError({ type: 'userName', message: 'A Username is required'})
             isError = true
-        } 
+        }
         return isError
     }
 
     return (
         <>
-            <div 
-                id="EditProfileOverlay" 
+            <div
+                id="EditProfileOverlay"
                 className="fixed flex justify-center pt-14 md:pt-[105px] z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 overflow-auto"
             >
-                <div 
+                <div
                     className={`
-                        relative bg-white w-full max-w-[700px] sm:h-[580px] h-[655px] mx-3 p-4 rounded-lg mb-10
+                        relative bg-white dark:bg-gray-900 w-full max-w-[700px] sm:h-[580px] h-[655px] mx-3 p-4 rounded-lg mb-10
                         ${!uploadedImage ? 'h-[655px]' : 'h-[580px]'}
                     `}
                 >
-                    <div className="absolute flex items-center justify-between w-full p-5 left-0 top-0 border-b border-b-gray-300">
-                        <h1 className="text-[22px] font-medium">
+                    <div className="absolute flex items-center justify-between w-full p-5 left-0 top-0 border-b border-b-gray-300 dark:border-b-gray-700">
+                        <h1 className="text-[22px] font-medium dark:text-white">
                             Edit profile
                         </h1>
-                        <button 
-                            disabled={isUpdating} 
-                            onClick={() => setIsEditProfileOpen(false)} 
-                            className="hover:bg-gray-200 p-1 rounded-full"
+                        <button
+                            disabled={isUpdating}
+                            onClick={() => setIsEditProfileOpen(false)}
+                            className="hover:bg-gray-200 dark:hover:bg-gray-800 p-1 rounded-full"
                         >
-                            <AiOutlineClose size="25"/>
+                            <AiOutlineClose size="25" className="dark:text-white"/>
                         </button>
                     </div>
 
                     <div className={`h-[calc(500px-200px)] ${!uploadedImage ? 'mt-16' : 'mt-[58px]'}`}>
 
-                        {!uploadedImage ? ( 
+                        {!uploadedImage ? (
                             <div>
-                                <div 
-                                    id="ProfilePhotoSection" 
+                                <div
+                                    id="ProfilePhotoSection"
                                     className="flex flex-col border-b sm:h-[118px] h-[145px] px-1.5 py-2 w-full"
                                 >
-                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 sm:w-[160px] sm:text-left text-center">
+                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 dark:text-gray-300 sm:w-[160px] sm:text-left text-center">
                                         Profile photo
                                     </h3>
 
@@ -151,8 +151,8 @@ export default function EditProfileOverlay() {
 
                                             <img className="rounded-full" width="95" src={useCreateBucketUrl(userImage)} />
 
-                                            <button className="absolute bottom-0 right-0 rounded-full bg-white shadow-xl border p-1 border-gray-300 inline-block w-[32px] h-[32px]">
-                                                <BsPencil size="17" className="ml-0.5"/>
+                                            <button className="absolute bottom-0 right-0 rounded-full bg-white dark:bg-gray-800 shadow-xl border p-1 border-gray-300 dark:border-gray-700 inline-block w-[32px] h-[32px]">
+                                                <BsPencil size="17" className="ml-0.5 dark:text-white"/>
                                             </button>
                                         </label>
                                         <input
@@ -165,69 +165,69 @@ export default function EditProfileOverlay() {
                                     </div>
                                 </div>
 
-                                <div 
-                                    id="UserNameSection" 
+                                <div
+                                    id="UserNameSection"
                                     className="flex flex-col border-b sm:h-[118px]  px-1.5 py-2 mt-1.5  w-full"
                                 >
-                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 sm:w-[160px] sm:text-left text-center">
+                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 dark:text-gray-300 sm:w-[160px] sm:text-left text-center">
                                         Name
                                     </h3>
 
                                     <div className="flex items-center justify-center sm:-mt-6">
                                         <div className="sm:w-[60%] w-full max-w-md">
 
-                                            <TextInput 
+                                            <TextInput
                                                 string={userName}
                                                 placeholder="Username"
                                                 onUpdate={setUserName}
                                                 inputType="text"
                                                 error={showError('userName')}
                                             />
-                                            
-                                            <p className={`relative text-[11px] text-gray-500 ${error ? 'mt-1' : 'mt-4'}`}>
-                                                Usernames can only contain letters, numbers, underscores, and periods. 
+
+                                            <p className={`relative text-[11px] text-gray-500 dark:text-gray-400 ${error ? 'mt-1' : 'mt-4'}`}>
+                                                Usernames can only contain letters, numbers, underscores, and periods.
                                                 Changing your username will also change your profile link.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div 
-                                    id="UserBioSection" 
+                                <div
+                                    id="UserBioSection"
                                     className="flex flex-col sm:h-[120px]  px-1.5 py-2 mt-2 w-full"
                                 >
-                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 sm:w-[160px] sm:text-left text-center">
+                                    <h3 className="font-semibold text-[15px] sm:mb-0 mb-1 text-gray-700 dark:text-gray-300 sm:w-[160px] sm:text-left text-center">
                                         Bio
                                     </h3>
 
                                     <div className="flex items-center justify-center sm:-mt-6">
                                         <div className="sm:w-[60%] w-full max-w-md">
-                                            <textarea 
+                                            <textarea
                                                 cols={30}
                                                 rows={4}
                                                 onChange={e => setUserBio(e.target.value)}
                                                 value={userBio || ''}
-                                                maxLength={80}
+                                                maxLength={100}
                                                 className="
                                                     resize-none
                                                     w-full
-                                                    bg-[#F1F1F2]
-                                                    text-gray-800
+                                                    bg-[#F1F1F2] dark:bg-gray-800
+                                                    text-gray-800 dark:text-gray-100
                                                     border
-                                                    border-gray-300
+                                                    border-gray-300 dark:border-gray-700
                                                     rounded-md
                                                     py-2.5
                                                     px-3
-                                                    focus:outline-none
+                                                    focus:outline-none dark:focus:border-gray-500
                                                 "
                                             ></textarea>
-                                            <p className="text-[11px] text-gray-500">{userBio ? userBio.length : 0}/80</p>
+                                            <p className="text-[11px] text-gray-500 dark:text-gray-400">{userBio ? userBio.length : 0}/100</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ) : (
-                            <div className="w-full max-h-[420px] mx-auto bg-black circle-stencil">
+                            <div className="w-full max-h-[420px] mx-auto bg-black dark:bg-gray-800 circle-stencil">
                                 <Cropper
                                     stencilProps={{ aspectRatio: 1 }}
                                     className="h-[400px]"
@@ -236,26 +236,26 @@ export default function EditProfileOverlay() {
                                 />
                             </div>
                         )}
-                        
-                    </div>
-                    
 
-                    <div 
-                        id="ButtonSection" 
-                        className="absolute p-5 left-0 bottom-0 border-t border-t-gray-300 w-full"
+                    </div>
+
+
+                    <div
+                        id="ButtonSection"
+                        className="absolute p-5 left-0 bottom-0 border-t border-t-gray-300 dark:border-t-gray-700 w-full"
                     >
                         {!uploadedImage ? (
                             <div id="UpdateInfoButtons" className="flex items-center justify-end">
 
-                                <button 
+                                <button
                                     disabled={isUpdating}
                                     onClick={() => setIsEditProfileOpen(false)}
-                                    className="flex items-center border rounded-sm px-3 py-[6px] hover:bg-gray-100"
+                                    className="flex items-center border dark:border-gray-700 rounded-sm px-3 py-[6px] hover:bg-gray-100 dark:hover:bg-gray-800"
                                 >
-                                    <span className="px-2 font-medium text-[15px]">Cancel</span>
+                                    <span className="px-2 font-medium text-[15px] dark:text-white">Cancel</span>
                                 </button>
 
-                                <button 
+                                <button
                                     disabled={isUpdating}
                                     onClick={() => updateUserInfo()}
                                     className="flex items-center bg-[#F02C56] text-white border rounded-md ml-3 px-3 py-[6px]"
@@ -269,14 +269,14 @@ export default function EditProfileOverlay() {
                         ) : (
                             <div id="CropperButtons" className="flex items-center justify-end" >
 
-                                <button 
+                                <button
                                     onClick={() => setUploadedImage(null)}
-                                    className="flex items-center border rounded-sm px-3 py-[6px] hover:bg-gray-100"
+                                    className="flex items-center border dark:border-gray-700 rounded-sm px-3 py-[6px] hover:bg-gray-100 dark:hover:bg-gray-800"
                                 >
-                                    <span className="px-2 font-medium text-[15px]">Cancel</span>
+                                    <span className="px-2 font-medium text-[15px] dark:text-white">Cancel</span>
                                 </button>
 
-                                <button 
+                                <button
                                     onClick={() => cropAndUpdateImage()}
                                     className="flex items-center bg-[#F02C56] text-white border rounded-md ml-3 px-3 py-[6px]"
                                 >
@@ -288,7 +288,7 @@ export default function EditProfileOverlay() {
                             </div>
                         )}
                     </div>
-                    
+
                 </div>
             </div>
         </>
